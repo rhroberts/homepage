@@ -1,8 +1,18 @@
 @font-face {
-    font-family: "NationalPark-Regular";
+    font-family: "NationalParkRegular";
     src: url(font-regular);
 }
 
 html {
-    font-family: "NationalPark-Regular", "sans-serif";
+    font-family: "NationalParkRegular", "sans-serif";
+    font-size: x-large;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    max-width: 800px;
 }
