@@ -6,13 +6,46 @@
 html {
     font-family: "NationalParkRegular", "sans-serif";
     font-size: x-large;
+    background-color: #c5e3c5;
 }
 
-.container {
+body {
+    margin: 0px;
+}
+
+#main {
+    max-width: 800px;
+    padding: 12px;
+}
+
+#navbar {
     display: flex;
     justify-content: center;
+    background-color: black;
+    color: gray;
+    padding: 12px;
+}
+
+#navbar > div {
+    width: 800px;
+    text-align: left;
+}
+
+#navbar > div > a {
+    color: gray;
+    text-decoration: none;
+}
+
+#navbar > div > a:hover {
+    color: #c5e3c5;
+    font-weight: bold;
+}
+
+#navbar > div > .nav-active {
+    color:#c5e3c5;
 }
 
 .content {
-    max-width: 800px;
+    display: flex;
+    justify-content: center;
 }
