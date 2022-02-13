@@ -2,6 +2,7 @@
 
 import { h, Helmet } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
+import Contact from "../components/contact.tsx";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
             pellentesque dignissim enim sit. Nulla posuere sollicitudin aliquam
             ultrices. Placerat orci nulla pellentesque dignissim enim sit..
           </p>
+          <Contact />
         </div>
       </div>
     </div>

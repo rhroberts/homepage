@@ -23,7 +23,7 @@ export default function NavBar(props: { activePage: string }) {
         <NavItem
           name="Resume"
           href="/resume"
-          current={activePage === "Projects"}
+          current={activePage === "Resume"}
         />
       </div>
     </div>

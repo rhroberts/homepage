@@ -38,14 +38,28 @@ body {
 
 #navbar > div > a:hover {
     color: #c5e3c5;
-    font-weight: bold;
 }
 
 #navbar > div > .nav-active {
     color:#c5e3c5;
 }
 
+#contact {
+    padding-top: 24px;
+}
+
 .content {
     display: flex;
     justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
+  padding-left: 9px;
+  padding-right: 9px;
 }

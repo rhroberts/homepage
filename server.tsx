@@ -7,6 +7,8 @@ import {
   renderSSR,
 } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import Home from "./pages/home.tsx";
+import Projects from "./pages/projects.tsx";
+import Resume from "./pages/resume.tsx";
 import { makeHtml } from "./utils.ts";
 
 async function handler(req: Request) {
@@ -23,6 +25,28 @@ async function handler(req: Request) {
       });
     case "/": {
       const ssr = renderSSR(<Home />);
+      const { body, head, footer } = Helmet.SSR(ssr);
+      const html = makeHtml(body, head, footer);
+
+      return new Response(html, {
+        headers: {
+          "content-type": "text/html",
+        },
+      });
+    }
+    case "/projects": {
+      const ssr = renderSSR(<Projects />);
+      const { body, head, footer } = Helmet.SSR(ssr);
+      const html = makeHtml(body, head, footer);
+
+      return new Response(html, {
+        headers: {
+          "content-type": "text/html",
+        },
+      });
+    }
+    case "/resume": {
+      const ssr = renderSSR(<Resume />);
       const { body, head, footer } = Helmet.SSR(ssr);
       const html = makeHtml(body, head, footer);
 
