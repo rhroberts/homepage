@@ -11,6 +11,8 @@ import Projects from "./pages/projects.tsx";
 import Resume from "./pages/resume.tsx";
 import { makeHtml } from "./utils.ts";
 
+const cacheMaxAge = 86400;
+
 async function handler(req: Request) {
   const { pathname } = new URL(req.url);
   const now = new Date();
@@ -20,7 +22,7 @@ async function handler(req: Request) {
       return new Response("<h1>Not found.</h1>", {
         status: 404,
         headers: {
-          "content-type": "text/html",
+          "content-type": "text/html; charset=utf-8",
         },
       });
     case "/": {
@@ -30,7 +32,8 @@ async function handler(req: Request) {
 
       return new Response(html, {
         headers: {
-          "content-type": "text/html",
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": `max-age=${cacheMaxAge}`,
         },
       });
     }
@@ -41,7 +44,8 @@ async function handler(req: Request) {
 
       return new Response(html, {
         headers: {
-          "content-type": "text/html",
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": `max-age=${cacheMaxAge}`,
         },
       });
     }
@@ -52,7 +56,17 @@ async function handler(req: Request) {
 
       return new Response(html, {
         headers: {
-          "content-type": "text/html",
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": `max-age=${cacheMaxAge}`,
+        },
+      });
+    }
+    case "/styles.css": {
+      const styles = await Deno.readFile("./static/styles.css");
+      return new Response(styles, {
+        headers: {
+          "content-type": "text/css; charset=utf-8",
+          "cache-control": `max-age=${cacheMaxAge}`,
         },
       });
     }
@@ -61,14 +75,6 @@ async function handler(req: Request) {
       return new Response(favicon, {
         headers: {
           "content-type": "image/x-icon",
-        },
-      });
-    }
-    case "/styles.css": {
-      const styles = await Deno.readFile("./static/styles.css");
-      return new Response(styles, {
-        headers: {
-          "content-type": "text/css",
         },
       });
     }
