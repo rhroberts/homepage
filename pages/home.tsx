@@ -6,12 +6,12 @@ import Contact from "../components/contact.tsx";
 
 export default function Home() {
   return (
-    <div class="container">
+    <div id="container">
       <Helmet>
         <title>Home</title>
       </Helmet>
       <NavBar activePage="Home" />
-      <div class="content">
+      <div id="content">
         <div id="main">
           <h1>Welcome.</h1>
           <p>

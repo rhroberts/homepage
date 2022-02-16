@@ -13,6 +13,16 @@ body {
     margin: 0px;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+}
+
 #main {
     max-width: 800px;
     padding: 12px;
@@ -48,9 +58,8 @@ body {
     padding-top: 24px;
 }
 
-.content {
-    display: flex;
-    justify-content: center;
+.project-card > a > img {
+    border-radius: 10px;
 }
 
 .icon {
