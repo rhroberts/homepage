@@ -1,11 +1,15 @@
 /** @jsx h */
 
-import { h, Helmet } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
+import {
+  Fragment,
+  h,
+  Helmet,
+} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
 
 export default function Projects() {
   return (
-    <div id="container">
+    <Fragment>
       <Helmet>
         <title>Projects</title>
       </Helmet>
@@ -16,7 +20,7 @@ export default function Projects() {
           <ProjectCard name="yatta" />
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
 

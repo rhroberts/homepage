@@ -7,19 +7,19 @@ export default function NavBar(props: { activePage: string }) {
   return (
     <div id="navbar">
       <div>
-        {"["}rhroberts.dev{"]&nbsp;&nbsp;"}
+        {"["}rhroberts.dev{"]&nbsp; "}
         <NavItem
           name="Home"
           href="/"
           current={activePage === "Home"}
         />
-        {" &bull; "}
+        {"&nbsp;&bull;&nbsp;"}
         <NavItem
           name="Projects"
           href="/projects"
           current={activePage === "Projects"}
         />
-        {" &bull; "}
+        {"&nbsp;&bull;&nbsp;"}
         <NavItem
           name="Resume"
           href="/resume"

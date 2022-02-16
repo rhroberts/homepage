@@ -1,12 +1,16 @@
 /** @jsx h */
 
-import { h, Helmet } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
+import {
+  Fragment,
+  h,
+  Helmet,
+} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
 import Contact from "../components/contact.tsx";
 
 export default function Home() {
   return (
-    <div id="container">
+    <Fragment>
       <Helmet>
         <title>Home</title>
       </Helmet>
@@ -32,6 +36,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
