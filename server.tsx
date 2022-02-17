@@ -87,6 +87,15 @@ async function handler(req: Request) {
         },
       });
     }
+    case "/wdft.png": {
+      const favicon = await Deno.readFile("./static/images/wdft.png");
+      return new Response(favicon, {
+        headers: {
+          "content-type": "image/png",
+          "cache-control": `max-age=${cacheMaxAge}`,
+        },
+      });
+    }
     case "/font-regular": {
       const font = await Deno.readFile(
         "./static/fonts/NationalPark-Regular.otf",

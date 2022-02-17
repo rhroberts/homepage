@@ -1,3 +1,21 @@
+@keyframes breeze {
+  0% {
+    transform: perspective(80rem) rotateY(-4deg);
+  }
+  25% {
+    transform: perspective(80rem) rotateY(3deg);
+  }
+  50% {
+    transform: perspective(80rem) rotateY(-2deg);
+  }
+  75% {
+    transform: perspective(80rem) rotateY(1deg);
+  }
+  100% {
+    transform: perspective(80rem) rotateX(0deg);
+  }
+}
+
 @font-face {
     font-family: "NationalParkRegular";
     src: url(font-regular);
@@ -14,7 +32,7 @@ body {
 }
 
 h1, h2 {
-    margin-top: 12px;
+    margin-top: 24px;
     margin-bottom: 12px;
 }
 
@@ -75,7 +93,15 @@ img {
     padding-top: 24px;
 }
 
-.project-card > a > img {
+.project-card-content {
+    margin-top: 12px;
+    margin-bottom: 48px;
+}
+
+.project-card-image {
+    animation-name: breeze;
+    animation-duration: 1.25s;
+    animation-timing-function: linear;
     border-radius: 10px;
 }
 
