@@ -74,10 +74,10 @@ async function handler(req: Request) {
       });
     }
     case "/favicon.ico": {
-      const favicon = await Deno.readFile("./static/favicon.ico");
+      const favicon = await Deno.readFile("./static/favicon.svg");
       return new Response(favicon, {
         headers: {
-          "content-type": "image/x-icon",
+          "content-type": "image/svg+xml",
         },
       });
     }
