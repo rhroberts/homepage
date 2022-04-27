@@ -13,18 +13,21 @@ import { makeHtml } from "./utils.ts";
 
 const cacheMaxAge = 86400;
 
+async function serveImage(path: string) {
+  const image = await Deno.readFile(path);
+  return new Response(image, {
+    headers: {
+      "content-type": "image/png",
+      "cache-control": `max-age=${cacheMaxAge}`,
+    },
+  });
+}
+
 async function handler(req: Request) {
   const { pathname } = new URL(req.url);
   const now = new Date();
   console.log(`[${now.toLocaleString()}] ${req.method}: ${pathname}`);
   switch (pathname) {
-    default:
-      return new Response("<h1>Not found.</h1>", {
-        status: 404,
-        headers: {
-          "content-type": "text/html; charset=utf-8",
-        },
-      });
     case "/": {
       const ssr = renderSSR(<Home />);
       const { body, head, footer } = Helmet.SSR(ssr);
@@ -79,22 +82,13 @@ async function handler(req: Request) {
       });
     }
     case "/yatta.png": {
-      const favicon = await Deno.readFile("./static/images/yatta.png");
-      return new Response(favicon, {
-        headers: {
-          "content-type": "image/png",
-          "cache-control": `max-age=${cacheMaxAge}`,
-        },
-      });
+      return serveImage("./static/images/yatta.png");
     }
     case "/wdft.png": {
-      const favicon = await Deno.readFile("./static/images/wdft.png");
-      return new Response(favicon, {
-        headers: {
-          "content-type": "image/png",
-          "cache-control": `max-age=${cacheMaxAge}`,
-        },
-      });
+      return serveImage("./static/images/wdft.png");
+    }
+    case "/browsyn.png": {
+      return serveImage("./static/images/browsyn.png");
     }
     case "/font-regular": {
       const font = await Deno.readFile(
@@ -106,6 +100,13 @@ async function handler(req: Request) {
         },
       });
     }
+    default:
+      return new Response("<h1>Not found.</h1>", {
+        status: 404,
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+        },
+      });
   }
 }
 
