@@ -23,7 +23,7 @@
 
 html {
     font-family: "NationalParkRegular", "sans-serif";
-    font-size: x-large;
+    font-size: larger;
     background-color: #c5e3c5;
 }
 
@@ -46,7 +46,7 @@ img {
     justify-content: center;
     overflow: auto;
     position: fixed;
-    top: 74px;
+    top: 49px;
     bottom: 0;
     width: 100%;
 }
@@ -64,7 +64,7 @@ img {
     color: gray;
     position: fixed;
     top: 0;
-    height: 50px;
+    height: 25px;
     padding-top: 12px;
     padding-bottom: 12px;
     width: 100%;
