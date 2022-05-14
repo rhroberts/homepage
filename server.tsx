@@ -64,6 +64,15 @@ async function handler(req: Request) {
         },
       });
     }
+    case "/script.js": {
+      const script = await Deno.readFile("./static/script.js");
+      return new Response(script, {
+        headers: {
+          "content-type": "application/javascript",
+          "cache-control": `max-age=${cacheMaxAge}`,
+        },
+      });
+    }
     case "/styles.css": {
       const styles = await Deno.readFile("./static/styles.css");
       return new Response(styles, {
@@ -74,10 +83,10 @@ async function handler(req: Request) {
       });
     }
     case "/favicon.ico": {
-      const favicon = await Deno.readFile("./static/favicon.svg");
+      const favicon = await Deno.readFile("./static/favicon.ico");
       return new Response(favicon, {
         headers: {
-          "content-type": "image/svg+xml",
+          "content-type": "image/x-icon",
         },
       });
     }

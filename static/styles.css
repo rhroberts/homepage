@@ -17,92 +17,110 @@
 }
 
 @font-face {
-    font-family: "NationalParkRegular";
-    src: url(font-regular);
+  font-family: "NationalParkRegular";
+  src: url(font-regular);
 }
 
 html {
-    font-family: "NationalParkRegular", "sans-serif";
-    font-size: larger;
-    background-color: #c5e3c5;
+  font-family: "NationalParkRegular", "sans-serif";
+  font-size: larger;
+  background-color: #c5e3c5;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
-h1, h2 {
-    margin-top: 24px;
-    margin-bottom: 12px;
+h1,
+h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 img {
-    width: 95vw;
-    max-width: fit-content;
+  width: 95vw;
+  max-width: fit-content;
 }
 
 #content {
-    display: flex;
-    justify-content: center;
-    overflow: auto;
-    position: fixed;
-    top: 49px;
-    bottom: 0;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  width: 100%;
 }
 
 #main {
-    width: 95vw;
-    max-width: 800px;
+  width: 95%;
+  max-width: 800px;
+}
+
+/* NAVBAR COMPONENT */
+
+#navbar-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: gray;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
 }
 
 #navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: gray;
-    position: fixed;
-    top: 0;
-    height: 25px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    width: 100%;
+  display: flex;
+  text-align: left;
+  width: 95%;
+  max-width: 800px;
 }
 
-#navbar > div {
-    text-align: left;
-    width: 95vw;
-    max-width: 800px;
+.nav-item {
+  color: gray;
+  text-decoration: none;
 }
 
-#navbar > div > a {
-    color: gray;
-    text-decoration: none;
+.nav-item:hover {
+  color: #c5e3c5;
 }
 
-#navbar > div > a:hover {
-    color: #c5e3c5;
+.nav-active {
+  color: #c5e3c5;
 }
 
-#navbar > div > .nav-active {
+#menu {
+  display: none;
+  flex-direction: column;
+  color:#c5e3c5;
+  background-color: black;
+  padding-left: 24px;
+  padding-bottom: 24px;
+}
+
+#menu-button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  color: gray;
+  background: inherit;
+  border: none;
+}
+
+@media (max-width: 376px) {
+
+  #nav-items-wrapper {
+    display: none;
+  }
+
+  #menu-button:hover {
+    cursor: pointer;
     color:#c5e3c5;
+  }
+
 }
+
+/* CONTACT COMPONENT */
 
 #contact {
-    padding-top: 24px;
-}
-
-.project-card-content {
-    margin-top: 12px;
-    margin-bottom: 48px;
-}
-
-.project-card-image {
-    animation-name: breeze;
-    animation-duration: 1.25s;
-    animation-timing-function: linear;
-    border-radius: 10px;
+  padding-top: 24px;
 }
 
 .icon {
@@ -114,4 +132,18 @@ img {
   fill: black;
   padding-left: 9px;
   padding-right: 9px;
+}
+
+/* PROJECT PAGE */
+
+.project-card-content {
+  margin-top: 12px;
+  margin-bottom: 48px;
+}
+
+.project-card-image {
+  animation-name: breeze;
+  animation-duration: 1.25s;
+  animation-timing-function: linear;
+  border-radius: 10px;
 }
