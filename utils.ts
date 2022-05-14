@@ -1,7 +1,7 @@
 export const makeHtml = (
   body: string,
   head: string[] = [],
-  footer: string[] = [],
+  footer: string[] = []
 ) => {
   let html = `
 <!DOCTYPE html>
@@ -11,6 +11,7 @@ export const makeHtml = (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
     ${head.join("\n")}
   </head>
 
