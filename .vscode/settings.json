@@ -4,5 +4,5 @@
   "deno.unstable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
-  "cSpell.words": ["browsyn", "wdft", "yatta"]
+  "cSpell.words": ["browsyn", "Glosten", "rhroberts", "rustyr", "wdft", "yatta"]
 }

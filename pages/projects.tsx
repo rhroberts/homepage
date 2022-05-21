@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <Fragment>
       <Helmet>
-        <title>Projects</title>
+        <title>Projects - Rusty Roberts</title>
       </Helmet>
       <NavBar activePage="Projects" />
       <div id="content">

@@ -7,19 +7,19 @@
 
 @keyframes breeze {
   0% {
-    transform: perspective(80rem) rotateY(-4deg);
+    transform: perspective(160rem) rotateY(-4deg);
   }
   25% {
-    transform: perspective(80rem) rotateY(3deg);
+    transform: perspective(160rem) rotateY(3deg);
   }
   50% {
-    transform: perspective(80rem) rotateY(-2deg);
+    transform: perspective(160rem) rotateY(-2deg);
   }
   75% {
-    transform: perspective(80rem) rotateY(1deg);
+    transform: perspective(160rem) rotateY(1deg);
   }
   100% {
-    transform: perspective(80rem) rotateX(0deg);
+    transform: perspective(160rem) rotateX(0deg);
   }
 }
 
@@ -60,6 +60,24 @@ img {
 #main {
   width: var(--content-width-percent);
   max-width: var(--content-max-width)
+}
+
+/* RESUME PAGE */
+
+#resume {
+  font-size: large;
+}
+
+#resume a {
+  color: #325b89
+}
+
+#resume h2 {
+  margin-bottom: 0px;
+}
+
+#resume > ul, p {
+  margin-top: 6px;
 }
 
 /* NAVBAR COMPONENT */

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Fragment>
       <Helmet>
-        <title>Home</title>
+        <title>Home - Rusty Roberts</title>
       </Helmet>
       <NavBar activePage="Home" />
       <div id="content">
