@@ -50,6 +50,11 @@ img {
   max-width: var(--content-max-width);
 }
 
+a {
+  color: #325b89
+}
+
+
 footer {
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
@@ -69,6 +74,7 @@ footer {
   justify-content: center;
   overflow: auto;
   width: 100%;
+  padding-top: 48px;
 }
 
 #main {
@@ -80,10 +86,6 @@ footer {
 
 #resume {
   font-size: large;
-}
-
-#resume a {
-  color: #325b89
 }
 
 #resume h2 {
@@ -101,9 +103,9 @@ footer {
   justify-content: center;
   background-color: black;
   color: var(--inactive-color);
-  padding-top: 12px;
-  padding-bottom: 12px;
   width: 100%;
+  position: fixed;
+  z-index: 1;
 }
 
 #navbar {
@@ -111,6 +113,8 @@ footer {
   text-align: left;
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .nav-item {
