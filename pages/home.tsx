@@ -7,6 +7,7 @@ import {
 } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
 import Contact from "../components/contact.tsx";
+import Footer from "../components/footer.tsx";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           <Contact />
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 }

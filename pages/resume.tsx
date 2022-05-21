@@ -6,6 +6,7 @@ import {
   Helmet,
 } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
+import Footer from "../components/footer.tsx";
 
 export default function Resume() {
   return (
@@ -183,6 +184,7 @@ export default function Resume() {
           </div>
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 }

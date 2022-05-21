@@ -21,17 +21,6 @@ export const makeHtml = (
   <body>
     ${body}
     ${footer.join("\n")}
-    <div id="footer-wrapper">
-      <footer>
-        &#169; 2022 &bullet; Rusty Roberts &bullet;
-        <a
-          href="https://github.com/rhroberts/homepage"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Site source</a
-        >
-      </footer>
-    </div>
   </body> 
 </html>
 `;

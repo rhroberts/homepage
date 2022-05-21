@@ -66,7 +66,7 @@ footer {
   justify-content: center;
   overflow: auto;
   width: 100%;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 #content {
@@ -103,7 +103,7 @@ footer {
   justify-content: center;
   background-color: black;
   color: var(--inactive-color);
-  width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 1;
 }
@@ -134,9 +134,14 @@ footer {
   display: none;
   flex-direction: column;
   color: var(--bg-color);
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
   background-color: black;
   padding-left: 24px;
   padding-bottom: 24px;
+  position: fixed;
+  top: 48px;
+  z-index: 1;
 }
 
 #menu-button {

@@ -7,6 +7,7 @@ import {
   Helmet,
 } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 import NavBar from "../components/navbar.tsx";
+import Footer from "../components/footer.tsx";
 
 export default function Projects() {
   return (
@@ -78,6 +79,7 @@ export default function Projects() {
           </ProjectCard>
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 }
