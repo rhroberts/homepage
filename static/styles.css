@@ -1,3 +1,10 @@
+:root {
+  --content-max-width: 700px;
+  --content-width-percent: 95%;
+  --bg-color: #c5e3c5;
+  --inactive-color: gray;
+}
+
 @keyframes breeze {
   0% {
     transform: perspective(80rem) rotateY(-4deg);
@@ -24,7 +31,8 @@
 html {
   font-family: "NationalParkRegular", "sans-serif";
   font-size: larger;
-  background-color: #c5e3c5;
+  background-color: var(--bg-color);
+  width: 100vw;
 }
 
 body {
@@ -38,8 +46,8 @@ h2 {
 }
 
 img {
-  width: 95vw;
-  max-width: fit-content;
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
 }
 
 #content {
@@ -50,8 +58,8 @@ img {
 }
 
 #main {
-  width: 95%;
-  max-width: 800px;
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width)
 }
 
 /* NAVBAR COMPONENT */
@@ -60,7 +68,7 @@ img {
   display: flex;
   justify-content: center;
   background-color: black;
-  color: gray;
+  color: var(--inactive-color);
   padding-top: 12px;
   padding-bottom: 12px;
   width: 100%;
@@ -69,27 +77,27 @@ img {
 #navbar {
   display: flex;
   text-align: left;
-  width: 95%;
-  max-width: 800px;
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
 }
 
 .nav-item {
-  color: gray;
+  color: var(--inactive-color);
   text-decoration: none;
 }
 
 .nav-item:hover {
-  color: #c5e3c5;
+  color: var(--bg-color);
 }
 
 .nav-active {
-  color: #c5e3c5;
+  color: var(--bg-color);
 }
 
 #menu {
   display: none;
   flex-direction: column;
-  color:#c5e3c5;
+  color: var(--bg-color);
   background-color: black;
   padding-left: 24px;
   padding-bottom: 24px;
@@ -99,7 +107,7 @@ img {
   font-family: inherit;
   font-size: inherit;
   padding: 0;
-  color: gray;
+  color: var(--inactive-color);
   background: inherit;
   border: none;
 }
@@ -112,7 +120,7 @@ img {
 
   #menu-button:hover {
     cursor: pointer;
-    color:#c5e3c5;
+    color:var(--bg-color);
   }
 
 }
