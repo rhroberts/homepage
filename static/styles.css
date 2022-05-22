@@ -87,7 +87,7 @@ footer {
   color: var(--inactive-color);
   width: 100vw;
   position: fixed;
-  top: 0px;
+  top: -2px;
   z-index: 1;
 }
 

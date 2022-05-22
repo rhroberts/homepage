@@ -24,38 +24,29 @@ export default function Projects() {
             imgSrc="wdft.png"
             href="https://waterdatafortexas.org"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
-            nulla pellentesque dignissim enim sit amet venenatis urna cursus.
-            Viverra tellus in hac habitasse. Interdum varius sit amet mattis
-            vulputate. Tellus in metus vulputate eu scelerisque felis imperdiet
-            proin fermentum. Lacus sed turpis tincidunt id aliquet risus feugiat
-            in. Mauris in aliquam sem fringilla ut morbi tincidunt augue
-            interdum. Volutpat diam ut venenatis tellus in metus. Leo a diam
-            sollicitudin tempor id eu nisl nunc. Bibendum est ultricies integer
-            quis auctor elit sed vulputate. Non curabitur gravida arcu ac tortor
-            dignissim. Lacinia quis vel eros donec. Ut placerat orci nulla
-            pellentesque dignissim enim sit. Nulla posuere sollicitudin aliquam
-            ultrices. Placerat orci nulla pellentesque dignissim enim sit..
+            I work on a small team that develops and maintains Water Data For
+            Texas, a website that provides the public with data and analysis of
+            the state's critical water resources. The site has over 10k weekly
+            active users. Several open-source libraries related to the site are
+            available on our agency's{" "}
+            <a href="https://github.com/twdb" target="_blank">GitHub page</a>.
+            The majority of the site's backend is written in Python, with React
+            and (a bit of) Angular used for its various frontend applications.
           </ProjectCard>
           <ProjectCard
             name="Browsyn"
             imgSrc="browsyn.png"
             href="https://rhroberts.github.io/browsyn/"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
-            nulla pellentesque dignissim enim sit amet venenatis urna cursus.
-            Viverra tellus in hac habitasse. Interdum varius sit amet mattis
-            vulputate. Tellus in metus vulputate eu scelerisque felis imperdiet
-            proin fermentum. Lacus sed turpis tincidunt id aliquet risus feugiat
-            in. Mauris in aliquam sem fringilla ut morbi tincidunt augue
-            interdum. Volutpat diam ut venenatis tellus in metus. Leo a diam
-            sollicitudin tempor id eu nisl nunc. Bibendum est ultricies integer
-            quis auctor elit sed vulputate. Non curabitur gravida arcu ac tortor
-            dignissim. Lacinia quis vel eros donec. Ut placerat orci nulla
-            pellentesque dignissim enim sit. Nulla posuere sollicitudin aliquam
-            ultrices. Placerat orci nulla pellentesque dignissim enim sit..
+            Browsyn is my ongoing attempt to emulate an analog synthesizer using
+            the Web Audio API. It currently features two, individually
+            addressable oscillators, an amplitude envelope, a low frequency
+            oscillator, and volume and octave controls. It's written in
+            TypeScript with React, and makes (I think) pleasant use of the
+            virtues of scalable vector graphics for the knobs and keyboard.
+            While it's a toy a the moment, I have designs to add MIDI input and
+            other essentials to make it a competent instrument for audio
+            production.
           </ProjectCard>
           <ProjectCard
             name="yatta"
@@ -63,19 +54,22 @@ export default function Projects() {
             imgSrc="yatta.png"
             href="https://github.com/rhroberts/yatta"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
-            nulla pellentesque dignissim enim sit amet venenatis urna cursus.
-            Viverra tellus in hac habitasse. Interdum varius sit amet mattis
-            vulputate. Tellus in metus vulputate eu scelerisque felis imperdiet
-            proin fermentum. Lacus sed turpis tincidunt id aliquet risus feugiat
-            in. Mauris in aliquam sem fringilla ut morbi tincidunt augue
-            interdum. Volutpat diam ut venenatis tellus in metus. Leo a diam
-            sollicitudin tempor id eu nisl nunc. Bibendum est ultricies integer
-            quis auctor elit sed vulputate. Non curabitur gravida arcu ac tortor
-            dignissim. Lacinia quis vel eros donec. Ut placerat orci nulla
-            pellentesque dignissim enim sit. Nulla posuere sollicitudin aliquam
-            ultrices. Placerat orci nulla pellentesque dignissim enim sit..
+            yatta is Yet Another Time Tracking Application. It is implemented in
+            Python and uses the <i>click</i>{" "}
+            command-line interface toolkit as well as some fun TUI libraries for
+            data visualization. yatta is part todo application, part timesheet.
+            I wrote it to help myself keep track of and document my work, though
+            I hope it will be useful to others as well. I also used the project
+            as a way to try out some of the Python tooling described in Claudio
+            Jolowicz's excellent{" "}
+            <a
+              href="https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hypermodern Python
+            </a>{" "}
+            series.
           </ProjectCard>
         </div>
       </div>
