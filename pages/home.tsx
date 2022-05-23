@@ -43,7 +43,7 @@ export default function Home() {
             <a href="https://rhroberts.github.io/browsyn/" target="_blank">
               this
             </a>{" "}
-            analog-imitating software synthesizer built on the Web Audio API. Or
+            analog-imitating software synthesizer built on the Web Audio API, or
             producing music and contributing audio-related code for{" "}
             <a href="https://github.com/dmarc3/bakken" target="_blank">
               hobby video games

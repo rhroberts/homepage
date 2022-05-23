@@ -1,6 +1,7 @@
 # Homepage
 
-Another iteration of my personal website.
+Another iteration of my personal website. Experimenting with
+[Deno](https://deno.land/) and [Nano JSX](https://nanojsx.io/).
 
 ## Dev Server
 
