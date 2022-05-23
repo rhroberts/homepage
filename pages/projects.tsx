@@ -36,7 +36,7 @@ export default function Projects() {
           <ProjectCard
             name="Browsyn"
             imgSrc="browsyn.png"
-            href="https://rhroberts.github.io/browsyn/"
+            href="https://github.com/rhroberts/browsyn/"
           >
             Browsyn is my ongoing attempt to emulate an analog synthesizer using
             the Web Audio API. It currently features two, individually
@@ -46,7 +46,10 @@ export default function Projects() {
             virtues of scalable vector graphics for the knobs and keyboard.
             While it's a toy a the moment, I have designs to add MIDI input and
             other essentials to make it a competent instrument for audio
-            production.
+            production. You can try a demo of the project{" "}
+            <a href="https://rhroberts.github.io/browsyn/" target="_blank">
+              here
+            </a>.
           </ProjectCard>
           <ProjectCard
             name="yatta"
