@@ -89,7 +89,7 @@ export default function Resume() {
                     analyzing and visualizing scientific data.
                   </li>
                   <li>
-                    Led and participated in projects that included members from
+                    Led and contributed to projects that included members from
                     several different research groups and disciplines.
                   </li>
                 </ul>
@@ -127,8 +127,8 @@ export default function Resume() {
                 and scientific computing.
               </li>
               <li>
-                Knowledgeable in designing web APIs using with Flask, FastAPI,
-                and other frameworks.
+                Knowledgeable in designing web APIs using Flask, FastAPI, and
+                other frameworks.
               </li>
               <li>
                 Experience building responsive, data-driven web frontends using
@@ -148,8 +148,8 @@ export default function Resume() {
               </li>
               <ul>
                 <li>
-                  Collaborated with a small team of UT graduate students
-                  developing curriculum for and teaching a robotics after-school
+                  Collaborated with a small team of UT graduate students to
+                  develop curriculum for and teach a robotics after-school
                   program.
                 </li>
               </ul>
@@ -177,9 +177,9 @@ export default function Resume() {
               M. Wiesner, R. H. Roberts, J.-F. Lin, D. Akinwande, T. Hesjedal,
               L. B. Duffy, S. Wang, Y. Song, J. Jenczyk, S. Jurga, and B. Mroz.
               The effect of substrate and surface plasmons on symmetry breaking
-              at the substrate interface of the topological insulator Bi2Te3.
-              {" "}
-              <i>Scientific Reports</i>, 9(1):6147, 2019.
+              at the substrate interface of the topological insulator Bi<sub>
+                2
+              </sub>Te<sub>3</sub>. <i>Scientific Reports</i>, 9(1):6147, 2019.
             </p>
           </div>
         </div>
