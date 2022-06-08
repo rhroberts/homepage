@@ -42,7 +42,8 @@ export default function Resume() {
             <ul>
               <li>
                 Programmer IV,{" "}
-                <b>Texas Water Development Board</b>, Austin, TX (2019-Present)
+                <b>Texas Water Development Board</b>, Austin, TX (Nov. 2021 -
+                Present)
               </li>
               <ul>
                 <li>
@@ -60,8 +61,26 @@ export default function Resume() {
                   Administer multiple production Linux servers running on AWS,
                   managing upgrades and deployment processes.
                 </li>
+              </ul>
+              <li>
+                Programmer III,{" "}
+                <b>Texas Water Development Board</b>, Austin, TX (Dec. 2019 -
+                Nov. 2021)
+              </li>
+              <ul>
                 <li>
-                  Contribute to upstream projects such as{" "}
+                  Full-stack web developer for{" "}
+                  <a
+                    href="https://waterdatafortexas.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Water Data For Texas
+                  </a>{" "}
+                  and internal scientific tools.
+                </li>
+                <li>
+                  Contributed to upstream projects such as{" "}
                   <a
                     href="https://github.com/ulmo-dev/ulmo"
                     target="_blank"
@@ -123,20 +142,26 @@ export default function Resume() {
             <h2>Technical Skills</h2>
             <ul>
               <li>
-                Extensive experience using Python for backend web development
-                and scientific computing.
+                Backend web development and scientific programming in Python (5
+                years).
               </li>
               <li>
-                Knowledgeable in designing web APIs using Flask, FastAPI, and
-                other frameworks.
+                API design using Flask, FastAPI, and other frameworks (3 years).
               </li>
               <li>
-                Experience building responsive, data-driven web frontends using
-                TypeScript and React.
+                Frontend web development with JavaScript/TypeScript and React (3
+                years).
               </li>
               <li>
-                Comfortable providing Linux server administration in production
-                environments, including on cloud platforms such as AWS.
+                Relational databases (PostgreSQL, sqlite) and object-relational
+                mapping tools (3 years).
+              </li>
+              <li>
+                Provisioning and deployment automation with Ansible (3 years).
+              </li>
+              <li>
+                Linux server administration on cloud platforms such as AWS (2
+                years).
               </li>
             </ul>
             <h2>Outreach</h2>
