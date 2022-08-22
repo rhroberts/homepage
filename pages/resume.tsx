@@ -23,8 +23,7 @@ export default function Resume() {
               <img
                 src="/icon.svg"
                 style="width:32px;margin-left:10px;transform:translateY(2px);"
-              >
-              </img>
+              ></img>
             </h1>
             <address>
               <a href="mailto:mail@rhroberts.dev">mail @ rhroberts.dev</a>
@@ -41,9 +40,8 @@ export default function Resume() {
             <h2>Employment</h2>
             <ul>
               <li>
-                Programmer IV,{" "}
-                <b>Texas Water Development Board</b>, Austin, TX (Nov. 2021 -
-                Present)
+                Programmer IV, <b>Texas Water Development Board</b>, Austin, TX
+                (Nov. 2021 - Present)
               </li>
               <ul>
                 <li>
@@ -58,14 +56,13 @@ export default function Resume() {
                   using an open-source web stack.
                 </li>
                 <li>
-                  Administer multiple production Linux servers running on AWS,
-                  managing upgrades and deployment processes.
+                  Support cloud infrastructure for web, database, and auxiliary
+                  services.
                 </li>
               </ul>
               <li>
-                Programmer III,{" "}
-                <b>Texas Water Development Board</b>, Austin, TX (Dec. 2019 -
-                Nov. 2021)
+                Programmer III, <b>Texas Water Development Board</b>, Austin, TX
+                (Dec. 2019 - Nov. 2021)
               </li>
               <ul>
                 <li>
@@ -80,22 +77,8 @@ export default function Resume() {
                   and internal scientific tools.
                 </li>
                 <li>
-                  Contributed to upstream projects such as{" "}
-                  <a
-                    href="https://github.com/ulmo-dev/ulmo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ulmo
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="https://github.com/twdb/sdi/tree/py3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    sdi
-                  </a>.
+                  Contributed to upstream geographic and hydrographic software
+                  packages.
                 </li>
               </ul>
               <li>
@@ -107,24 +90,16 @@ export default function Resume() {
                     devices, which included writing Python applications for
                     analyzing and visualizing scientific data.
                   </li>
-                  <li>
-                    Led and contributed to projects that included members from
-                    several different research groups and disciplines.
-                  </li>
                 </ul>
               </li>
               <li>
-                Engineering Writer,{" "}
-                <b>Glosten, Inc.</b>, Seattle, WA (2014-2016)
+                Engineering Writer, <b>Glosten, Inc.</b>, Seattle, WA
+                (2014-2016)
               </li>
               <ul>
                 <li>
-                  Wrote and edited documentation, technical specifications,
-                  white papers, and marketing materials.
-                </li>
-                <li>
-                  Supported engineering efforts by developing technical drawings
-                  and performing regulatory research.
+                  Wrote and edited documentation, technical specifications, and
+                  marketing materials.
                 </li>
               </ul>
             </ul>
@@ -138,37 +113,40 @@ export default function Resume() {
                 <i>B.S.</i>, Materials Science and Engineering,{" "}
                 <b>Columbia University</b> (2014)
               </li>
+              <li>
+                <i>B.A.</i>, Natural and Mathematical Sciences,{" "}
+                <b>Whitman College</b> (2014, Dual-degree program with CU)
+              </li>
             </ul>
             <h2>Technical Skills</h2>
             <ul>
               <li>
-                Backend web development and scientific programming in Python (5
-                years).
+                Backend web development and scientific programming in Python (3
+                years)
               </li>
               <li>
-                API design using Flask, FastAPI, and other frameworks (3 years).
+                RESTful APIs with Flask, FastAPI, and other frameworks (2 years)
               </li>
               <li>
-                Frontend web development with JavaScript/TypeScript and React (3
-                years).
+                Frontend web development with JavaScript/TypeScript and React (2
+                years)
               </li>
               <li>
                 Relational databases (PostgreSQL, sqlite) and object-relational
-                mapping tools (3 years).
+                mapping tools (2 years)
               </li>
               <li>
-                Provisioning and deployment automation with Ansible (3 years).
+                Provisioning and deployment automation with Ansible (2 years)
               </li>
               <li>
                 Linux server administration on cloud platforms such as AWS (2
-                years).
+                years)
               </li>
             </ul>
             <h2>Outreach</h2>
             <ul>
               <li>
-                Robotics and Coding Club, <b>Cunningham Elementary School</b>
-                {" "}
+                Robotics and Coding Club, <b>Cunningham Elementary School</b>{" "}
                 (2018-2019)
               </li>
               <ul>
@@ -202,9 +180,9 @@ export default function Resume() {
               M. Wiesner, R. H. Roberts, J.-F. Lin, D. Akinwande, T. Hesjedal,
               L. B. Duffy, S. Wang, Y. Song, J. Jenczyk, S. Jurga, and B. Mroz.
               The effect of substrate and surface plasmons on symmetry breaking
-              at the substrate interface of the topological insulator Bi<sub>
-                2
-              </sub>Te<sub>3</sub>. <i>Scientific Reports</i>, 9(1):6147, 2019.
+              at the substrate interface of the topological insulator Bi
+              <sub>2</sub>Te<sub>3</sub>. <i>Scientific Reports</i>, 9(1):6147,
+              2019.
             </p>
           </div>
         </div>

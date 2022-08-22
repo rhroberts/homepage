@@ -29,9 +29,12 @@ export default function Projects() {
             the state's critical water resources. The site has over 10k weekly
             active users. Several open-source libraries related to the site are
             available on our agency's{" "}
-            <a href="https://github.com/twdb" target="_blank">GitHub page</a>.
-            The majority of the site's backend is written in Python, with React
-            and (a bit of) Angular used for its various frontend applications.
+            <a href="https://github.com/twdb" target="_blank">
+              GitHub page
+            </a>
+            . The majority of the site's backend is written in Python, with
+            React and (a bit of) Angular used for its various frontend
+            applications.
           </ProjectCard>
           <ProjectCard
             name="Browsyn"
@@ -42,14 +45,15 @@ export default function Projects() {
             the Web Audio API. It currently features two, individually
             addressable oscillators, an amplitude envelope, a low frequency
             oscillator, and volume and octave controls. It's written in
-            TypeScript with React, and makes (I think) pleasant use of the
-            virtues of scalable vector graphics for the knobs and keyboard.
-            While it's a toy a the moment, I have designs to add MIDI input and
-            other essentials to make it a competent instrument for audio
-            production. You can try a demo of the project{" "}
+            TypeScript with React, and makes pleasant use of the virtues of
+            scalable vector graphics for the knobs and keyboard. While it's a
+            toy a the moment, I have designs to add MIDI input and other
+            essentials to make it a competent instrument for audio production.
+            You can try a demo of the project{" "}
             <a href="https://rhroberts.github.io/browsyn/" target="_blank">
               here
-            </a>.
+            </a>
+            .
           </ProjectCard>
           <ProjectCard
             name="yatta"
@@ -58,13 +62,12 @@ export default function Projects() {
             href="https://github.com/rhroberts/yatta"
           >
             yatta is Yet Another Time Tracking Application. It is implemented in
-            Python and uses the <i>click</i>{" "}
-            command-line interface toolkit as well as some fun TUI libraries for
-            data visualization. yatta is part todo application, part timesheet.
-            I wrote it to help myself keep track of and document my work, though
-            I hope it will be useful to others as well. I also used the project
-            as a way to try out some of the Python tooling described in Claudio
-            Jolowicz's excellent{" "}
+            Python and uses the <i>click</i> command-line interface toolkit as
+            well as some fun TUI libraries for data visualization. yatta is part
+            todo application, part timesheet. I wrote it to help myself keep
+            track of and document my work, though I hope it will be useful to
+            others as well. I also used the project as a way to try out some of
+            the Python tooling described in Claudio Jolowicz's excellent{" "}
             <a
               href="https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769"
               target="_blank"
@@ -81,29 +84,21 @@ export default function Projects() {
   );
 }
 
-function ProjectCard(
-  props: {
-    name: string;
-    description?: string;
-    href: string;
-    imgSrc: string;
-    children?: FC;
-  },
-) {
+function ProjectCard(props: {
+  name: string;
+  description?: string;
+  href: string;
+  imgSrc: string;
+  children?: FC;
+}) {
   const { name, description, imgSrc, href, children } = props;
   return (
     <div class="project-card">
       <h2>{name}</h2>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer">
         <img class="project-card-image" src={imgSrc} alt={name} />
       </a>
-      <div class="project-card-content">
-        {children}
-      </div>
+      <div class="project-card-content">{children}</div>
     </div>
   );
 }
