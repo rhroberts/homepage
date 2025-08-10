@@ -8,7 +8,7 @@ export default function NavBar({ activePage }: NavBarProps) {
       <div id="navbar-wrapper">
         <div id="navbar">
           <button id="menu-button" type="button">
-            [rhroberts.dev] 
+            [rhroberts.dev]
           </button>
           <div id="nav-items-wrapper">
             <NavItem

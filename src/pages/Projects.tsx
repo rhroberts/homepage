@@ -60,13 +60,12 @@ export default function Projects() {
             href="https://github.com/rhroberts/yatta"
           >
             yatta is Yet Another Time Tracking Application. It is implemented in
-            Python and uses the <i>click</i>{" "}
-            command-line interface toolkit as well as some fun TUI libraries for
-            data visualization. yatta is part todo application, part timesheet.
-            I wrote it to help myself keep track of and document my work, though
-            I hope it will be useful to others as well. I also used the project
-            as a way to try out some of the Python tooling described in Claudio
-            Jolowicz's excellent{" "}
+            Python and uses the <i>click</i> command-line interface toolkit as
+            well as some fun TUI libraries for data visualization. yatta is part
+            todo application, part timesheet. I wrote it to help myself keep
+            track of and document my work, though I hope it will be useful to
+            others as well. I also used the project as a way to try out some of
+            the Python tooling described in Claudio Jolowicz's excellent{" "}
             <a
               href="https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769"
               target="_blank"
@@ -102,4 +101,3 @@ function ProjectCard({ name, imgSrc, href, children }: ProjectCardProps) {
     </div>
   );
 }
-

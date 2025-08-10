@@ -1,1 +1,1 @@
-# Add your pre-commit hooks here
+npm run format:check

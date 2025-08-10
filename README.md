@@ -30,6 +30,12 @@ npm test
 
 # Run tests once
 npm run test:run
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting
+npm run format:check
 ```
 
 The development server runs at `http://localhost:5173` with hot module replacement.

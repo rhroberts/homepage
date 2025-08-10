@@ -1,7 +1,7 @@
 export const makeHtml = (
   body: string,
   head: string[] = [],
-  footer: string[] = []
+  footer: string[] = [],
 ) => {
   let html = `
 <!DOCTYPE html>
