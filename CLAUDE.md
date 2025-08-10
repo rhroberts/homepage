@@ -10,15 +10,15 @@
 
 - Run tests with `npm run test:run` after making changes
 - Use `npm run lint` to check for linting issues
-- Use `npm run generate` to build the static site
 - Use `npm run build:prod` for production builds
 
 ## Project Structure
 
-- This is a static site generator using React + TypeScript + Vite
-- Static files are generated to `/dist/` directory
+- This is a Single Page Application (SPA) using React + TypeScript + Vite
+- Built files are output to `/dist/` directory
 - Source files are in `/src/`
 - Static assets are in `/static/`
+- CSS modules provide component-level styling isolation
 
 ## URLs
 

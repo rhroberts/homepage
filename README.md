@@ -13,39 +13,33 @@ npm install
 # Start development server
 npm run dev
 
-# Vite build for development
+# Build for production
 npm run build
 
-# Generate static HTML files
-npm run generate
-
-# Build everything for production (build + generate)
-npm run build:prod
-
-# Preview production build locally
+# Vite preview
 npm run preview
 
 # Run tests in watch mode
-npm test
+npm run test
 
 # Run tests once
 npm run test:run
 
-# Format code with Prettier
+# Format code
 npm run format
 
-# Check code formatting
-npm run format:check
-
-# Lint code with ESLint
+# Lint code
 npm run lint
-
-# Fix ESLint issues automatically
-npm run lint:fix
 ```
 
 The development server runs at `http://localhost:5173` with hot module replacement.
 
 ## Deployment
 
-Run `npm run build:prod` to create a complete production build. The `dist/` folder contains the static website ready for deployment to any static hosting service.
+This is a Single Page Application (SPA) with client-side routing. Run `npm run build` to create the production build.
+
+### Deployment Options:
+
+- **Netlify/Vercel**: Will automatically handle SPA routing
+- **GitHub Pages**: Includes 404.html fallback for routing
+- **Other static hosts**: The `_redirects` file configures SPA routing
