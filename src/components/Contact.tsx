@@ -1,6 +1,8 @@
+import styles from "./Contact.module.css";
+
 export default function Contact() {
   return (
-    <div id="contact">
+    <div className={styles.contact}>
       <SvgDef />
       <b>Contact </b>
       <ContactItem
@@ -31,7 +33,7 @@ interface ContactItemProps {
 function ContactItem({ href, iconName }: ContactItemProps) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
-      <svg className={`icon ${iconName}`}>
+      <svg className={`${styles.icon} ${iconName}`}>
         <use xlinkHref={`#${iconName}`}></use>
       </svg>
     </a>

@@ -1,0 +1,50 @@
+:root {
+  --content-max-width: 800px;
+  --content-width-percent: 95%;
+  --bg-color: #c5e3c5;
+  --inactive-color: gray;
+}
+
+@font-face {
+  font-family: "NationalParkRegular";
+  src: url(/static/font-regular);
+}
+
+html {
+  font-family: "NationalParkRegular", "sans-serif";
+  font-size: larger;
+  background-color: var(--bg-color);
+  width: 100vw;
+}
+
+body {
+  margin: 0px;
+}
+
+h1,
+h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+img {
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
+}
+
+a {
+  color: #325b89;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  width: 100%;
+  padding-top: 48px;
+}
+
+#main {
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
+}

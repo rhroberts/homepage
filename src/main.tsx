@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "../static/styles.css";
+import "./styles/global.css";
 
 // This file is used for Vite dev server routing
 const App = () => {

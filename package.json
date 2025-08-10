@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "generate": "tsx src/generate.ts",
+    "generate": "node scripts/create-css-stubs.cjs && tsx scripts/generate.ts && node scripts/cleanup-css-stubs.cjs",
     "build:prod": "npm run build && npm run generate",
     "test": "vitest",
     "test:run": "vitest run",

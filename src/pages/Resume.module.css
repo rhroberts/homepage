@@ -1,0 +1,12 @@
+.resume {
+  font-size: large;
+}
+
+.resume h2 {
+  margin-bottom: 0px;
+}
+
+.resume > ul,
+.resume p {
+  margin-top: 6px;
+}

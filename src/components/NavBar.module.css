@@ -1,0 +1,73 @@
+:root {
+  --content-max-width: 800px;
+  --content-width-percent: 95%;
+  --bg-color: #c5e3c5;
+  --inactive-color: gray;
+}
+
+.navbarWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: var(--inactive-color);
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  text-align: left;
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.navItem {
+  color: var(--inactive-color);
+  text-decoration: none;
+}
+
+.navItem:hover {
+  color: var(--bg-color);
+}
+
+.navActive {
+  color: var(--bg-color);
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  color: var(--bg-color);
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
+  background-color: black;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  position: fixed;
+  top: 48px;
+  z-index: 1;
+}
+
+.menuButton {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  color: var(--inactive-color);
+  background: inherit;
+  border: none;
+}
+
+@media (max-width: 376px) {
+  .navItemsWrapper {
+    display: none;
+  }
+
+  .menuButton:hover {
+    cursor: pointer;
+    color: var(--bg-color);
+  }
+}

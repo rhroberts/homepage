@@ -1,7 +1,9 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <div id="footer-wrapper">
-      <footer>
+    <div className={styles.footerWrapper}>
+      <footer className={styles.footer}>
         © 2022 • Rusty Roberts •{" "}
         <a
           href="https://github.com/rhroberts/homepage"

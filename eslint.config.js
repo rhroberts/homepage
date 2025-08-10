@@ -20,6 +20,23 @@ export default tseslint.config(
     },
   },
   {
+    files: ["scripts/**/*.cjs"],
+    languageOptions: {
+      globals: {
+        require: "readonly",
+        console: "readonly",
+        process: "readonly",
+        __dirname: "readonly",
+        __filename: "readonly",
+        module: "readonly",
+        exports: "readonly",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  {
     ignores: ["dist/**", "node_modules/**"],
   },
 );

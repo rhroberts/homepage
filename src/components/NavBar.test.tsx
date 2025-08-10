@@ -13,8 +13,8 @@ describe("NavBar", () => {
     const homeLinks = screen.getAllByText("Home");
 
     homeLinks.forEach((link) => {
-      expect(link).toHaveClass("nav-active");
-      expect(link).not.toHaveClass("nav-inactive");
+      expect(link.className).toContain("navActive");
+      expect(link.className).toContain("navItem");
     });
   });
 
@@ -23,12 +23,13 @@ describe("NavBar", () => {
     const projectsLinks = screen.getAllByText("Projects");
 
     projectsLinks.forEach((link) => {
-      expect(link).toHaveClass("nav-active");
+      expect(link.className).toContain("navActive");
     });
 
     const homeLinks = screen.getAllByText("Home");
     homeLinks.forEach((link) => {
-      expect(link).toHaveClass("nav-inactive");
+      expect(link.className).toContain("navItem");
+      expect(link.className).not.toContain("navActive");
     });
   });
 

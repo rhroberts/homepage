@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
+import styles from "./Projects.module.css";
 
 export default function Projects() {
   return (
@@ -92,12 +93,12 @@ interface ProjectCardProps {
 
 function ProjectCard({ name, imgSrc, href, children }: ProjectCardProps) {
   return (
-    <div className="project-card">
+    <div>
       <h2>{name}</h2>
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <img className="project-card-image" src={imgSrc} alt={name} />
+        <img className={styles.projectCardImage} src={imgSrc} alt={name} />
       </a>
-      <div className="project-card-content">{children}</div>
+      <div className={styles.projectCardContent}>{children}</div>
     </div>
   );
 }

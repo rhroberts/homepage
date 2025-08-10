@@ -38,8 +38,8 @@ describe("Contact", () => {
 
   it("renders SVG icons for all contact methods", () => {
     render(<Contact />);
-    // Check that SVG elements are present in the DOM
-    const svgs = document.querySelectorAll("svg.icon");
+    // Check that SVG elements with icon class are present
+    const svgs = document.querySelectorAll("svg[class*='icon']");
     expect(svgs.length).toBe(3); // email, matrix, github
 
     // Check that the correct icon classes are present

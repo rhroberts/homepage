@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
+import styles from "./Resume.module.css";
 
 export default function Resume() {
   return (
@@ -7,7 +8,7 @@ export default function Resume() {
       <NavBar activePage="Resume" />
       <div id="content">
         <div id="main">
-          <div id="resume">
+          <div className={styles.resume}>
             <h1>
               Rusty Roberts
               <img

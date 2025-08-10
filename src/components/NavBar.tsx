@@ -1,3 +1,5 @@
+import styles from "./NavBar.module.css";
+
 interface NavBarProps {
   activePage: string;
 }
@@ -5,12 +7,12 @@ interface NavBarProps {
 export default function NavBar({ activePage }: NavBarProps) {
   return (
     <>
-      <div id="navbar-wrapper">
-        <div id="navbar">
-          <button id="menu-button" type="button">
+      <div className={styles.navbarWrapper}>
+        <div className={styles.navbar}>
+          <button className={styles.menuButton} type="button">
             [rhroberts.dev]
           </button>
-          <div id="nav-items-wrapper">
+          <div className={styles.navItemsWrapper}>
             <NavItem name="Home" href="/" current={activePage === "Home"} />
             {" • "}
             <NavItem
@@ -27,7 +29,7 @@ export default function NavBar({ activePage }: NavBarProps) {
           </div>
         </div>
       </div>
-      <div id="menu">
+      <div className={styles.menu}>
         <NavItem name="Home" href="/" current={activePage === "Home"} />
         <NavItem
           name="Projects"
@@ -54,7 +56,7 @@ function NavItem({ name, href, current }: NavItemProps) {
   return (
     <a
       href={href}
-      className={`nav-item ${current ? "nav-active" : "nav-inactive"}`}
+      className={`${styles.navItem} ${current ? styles.navActive : ""}`}
     >
       {name}
     </a>
