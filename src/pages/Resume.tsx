@@ -1,19 +1,9 @@
-/** @jsx h */
-
-import {
-  Fragment,
-  h,
-  Helmet,
-} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
-import NavBar from "../components/navbar.tsx";
-import Footer from "../components/footer.tsx";
+import NavBar from "../components/NavBar.tsx";
+import Footer from "../components/Footer.tsx";
 
 export default function Resume() {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Resume - Rusty Roberts</title>
-      </Helmet>
+    <>
       <NavBar activePage="Resume" />
       <div id="content">
         <div id="main">
@@ -22,12 +12,17 @@ export default function Resume() {
               Rusty Roberts
               <img
                 src="/icon.svg"
-                style="width:32px;margin-left:10px;transform:translateY(2px);"
-              ></img>
+                style={{
+                  width: "32px",
+                  marginLeft: "10px",
+                  transform: "translateY(2px)",
+                }}
+                alt="Site icon"
+              />
             </h1>
             <address>
-              <a href="mailto:mail@rhroberts.dev">mail @ rhroberts.dev</a>
-              &bullet;
+              <a href="mailto:mail@rhroberts.dev">mail@rhroberts.dev</a>
+              {" • "}
               <a
                 href="https://github.com/rhroberts"
                 target="_blank"
@@ -40,8 +35,9 @@ export default function Resume() {
             <h2>Employment</h2>
             <ul>
               <li>
-                Programmer IV, <b>Texas Water Development Board</b>, Austin, TX
-                (Nov. 2021 - Present)
+                Programmer IV,{" "}
+                <b>Texas Water Development Board</b>, Austin, TX (Nov. 2021 -
+                Present)
               </li>
               <ul>
                 <li>
@@ -61,8 +57,9 @@ export default function Resume() {
                 </li>
               </ul>
               <li>
-                Programmer III, <b>Texas Water Development Board</b>, Austin, TX
-                (Dec. 2019 - Nov. 2021)
+                Programmer III,{" "}
+                <b>Texas Water Development Board</b>, Austin, TX (Dec. 2019 -
+                Nov. 2021)
               </li>
               <ul>
                 <li>
@@ -93,8 +90,8 @@ export default function Resume() {
                 </ul>
               </li>
               <li>
-                Engineering Writer, <b>Glosten, Inc.</b>, Seattle, WA
-                (2014-2016)
+                Engineering Writer,{" "}
+                <b>Glosten, Inc.</b>, Seattle, WA (2014-2016)
               </li>
               <ul>
                 <li>
@@ -146,7 +143,8 @@ export default function Resume() {
             <h2>Outreach</h2>
             <ul>
               <li>
-                Robotics and Coding Club, <b>Cunningham Elementary School</b>{" "}
+                Robotics and Coding Club, <b>Cunningham Elementary School</b>
+                {" "}
                 (2018-2019)
               </li>
               <ul>
@@ -181,13 +179,13 @@ export default function Resume() {
               L. B. Duffy, S. Wang, Y. Song, J. Jenczyk, S. Jurga, and B. Mroz.
               The effect of substrate and surface plasmons on symmetry breaking
               at the substrate interface of the topological insulator Bi
-              <sub>2</sub>Te<sub>3</sub>. <i>Scientific Reports</i>, 9(1):6147,
-              2019.
+              <sub>2</sub>Te<sub>3</sub>.{" "}
+              <i>Scientific Reports</i>, 9(1):6147, 2019.
             </p>
           </div>
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 }

@@ -1,12 +1,9 @@
-/** @jsx h */
-
-import { h } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
 
 export default function Contact() {
   return (
     <div id="contact">
       <SvgDef />
-      <b>Contact &nbsp;</b>
+      <b>Contact </b>
       <ContactItem
         name="Email"
         href="mailto:mail@rhroberts.dev"
@@ -26,12 +23,17 @@ export default function Contact() {
   );
 }
 
-function ContactItem(props: { name: string; iconName: string; href: string }) {
-  const { name, href, iconName } = props;
+interface ContactItemProps {
+  name: string;
+  iconName: string;
+  href: string;
+}
+
+function ContactItem({ href, iconName }: ContactItemProps) {
   return (
-    <a href={href} target="_blank">
-      <svg class={`icon ${iconName}`}>
-        <use xlink:href={`#${iconName}`}></use>
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      <svg className={`icon ${iconName}`}>
+        <use xlinkHref={`#${iconName}`}></use>
       </svg>
     </a>
   );
@@ -41,10 +43,10 @@ function SvgDef() {
   return (
     <svg
       aria-hidden="true"
-      style="position: absolute; width: 0; height: 0; overflow: hidden;"
+      style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <defs>
         <symbol id="icon-bubble" viewBox="0 0 32 32">

@@ -1,12 +1,33 @@
 # Homepage
 
-Another iteration of my personal website. Experimenting with
-[Deno](https://deno.land/) and [Nano JSX](https://nanojsx.io/).
+My personal website.
 
-## Dev Server
+## Development
 
-Requires [deno cli](https://deno.land/#installation).
+Requires [Node.js](https://nodejs.org/).
 
 ```bash
-deno run --allow-net=:8000 --allow-read --config tsconfig.json --watch server.tsx
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production (TypeScript + Vite bundle)
+npm run build
+
+# Generate static HTML files
+npm run generate
+
+# Build everything for production (build + generate)
+npm run build:prod
+
+# Preview production build locally
+npm run preview
 ```
+
+The development server runs at `http://localhost:5173` with hot module replacement.
+
+## Deployment
+
+Run `npm run build:prod` to create a complete production build. The `dist/` folder contains the static website ready for deployment to any static hosting service.
