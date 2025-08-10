@@ -13,7 +13,7 @@ npm install
 # Start development server
 npm run dev
 
-# Build for production (TypeScript + Vite bundle)
+# Vite build for development
 npm run build
 
 # Generate static HTML files
@@ -24,6 +24,12 @@ npm run build:prod
 
 # Preview production build locally
 npm run preview
+
+# Run tests in watch mode
+npm test
+
+# Run tests once
+npm run test:run
 ```
 
 The development server runs at `http://localhost:5173` with hot module replacement.
