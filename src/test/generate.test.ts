@@ -13,7 +13,7 @@ describe("Static Site Generation", () => {
     // Clean up any existing test-dist directory
     try {
       await fs.rm(testDistDir, { recursive: true, force: true });
-    } catch (error) {
+    } catch {
       // Directory doesn't exist, ignore
     }
   });
@@ -22,7 +22,7 @@ describe("Static Site Generation", () => {
     // Clean up test directory
     try {
       await fs.rm(testDistDir, { recursive: true, force: true });
-    } catch (error) {
+    } catch {
       // Ignore cleanup errors
     }
   });

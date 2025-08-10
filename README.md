@@ -36,6 +36,12 @@ npm run format
 
 # Check code formatting
 npm run format:check
+
+# Lint code with ESLint
+npm run lint
+
+# Fix ESLint issues automatically
+npm run lint:fix
 ```
 
 The development server runs at `http://localhost:5173` with hot module replacement.
