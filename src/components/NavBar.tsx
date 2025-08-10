@@ -11,40 +11,32 @@ export default function NavBar({ activePage }: NavBarProps) {
             [rhroberts.dev]
           </button>
           <div id="nav-items-wrapper">
-            <NavItem
-              name="Home"
-              href="/index.html"
-              current={activePage === "Home"}
-            />
+            <NavItem name="Home" href="/" current={activePage === "Home"} />
             {" • "}
             <NavItem
               name="Projects"
-              href="/projects/index.html"
+              href="/projects"
               current={activePage === "Projects"}
             />
             {" • "}
             <NavItem
               name="Resume"
-              href="/resume/index.html"
+              href="/resume"
               current={activePage === "Resume"}
             />
           </div>
         </div>
       </div>
       <div id="menu">
-        <NavItem
-          name="Home"
-          href="/index.html"
-          current={activePage === "Home"}
-        />
+        <NavItem name="Home" href="/" current={activePage === "Home"} />
         <NavItem
           name="Projects"
-          href="/projects/index.html"
+          href="/projects"
           current={activePage === "Projects"}
         />
         <NavItem
           name="Resume"
-          href="/resume/index.html"
+          href="/resume"
           current={activePage === "Resume"}
         />
       </div>

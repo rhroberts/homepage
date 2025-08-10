@@ -87,9 +87,9 @@ describe("Static Site Generation", () => {
     const indexHtml = await fs.readFile(join(distDir, "index.html"), "utf-8");
 
     // Check that navigation links use correct paths
-    expect(indexHtml).toContain('href="/index.html"');
-    expect(indexHtml).toContain('href="/projects/index.html"');
-    expect(indexHtml).toContain('href="/resume/index.html"');
+    expect(indexHtml).toContain('href="/"');
+    expect(indexHtml).toContain('href="/projects"');
+    expect(indexHtml).toContain('href="/resume"');
   });
 
   it("includes expected content on each page", async () => {

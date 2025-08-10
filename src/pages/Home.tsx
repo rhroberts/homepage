@@ -55,9 +55,8 @@ export default function Home() {
           </p>
           <p>
             From here, you can read about a few select{" "}
-            <a href="/projects/index.html">projects</a> of mine, view my{" "}
-            <a href="/resume/index.html">resume</a>, our checkout my public
-            repositories on{" "}
+            <a href="/projects">projects</a> of mine, view my{" "}
+            <a href="/resume">resume</a>, our checkout my public repositories on{" "}
             <a
               href="https://github.com/rhroberts"
               target="_blank"
