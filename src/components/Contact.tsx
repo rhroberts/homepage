@@ -30,9 +30,9 @@ interface ContactItemProps {
   href: string;
 }
 
-function ContactItem({ href, iconName }: ContactItemProps) {
+function ContactItem({ name, href, iconName }: ContactItemProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={name}>
       <svg className={`${styles.icon} ${iconName}`}>
         <use xlinkHref={`#${iconName}`}></use>
       </svg>

@@ -62,7 +62,6 @@ export default function Projects() {
           </ProjectCard>
           <ProjectCard
             name="yatta"
-            description="yet another time tracking application"
             imgSrc={yattaImage}
             href="https://github.com/rhroberts/yatta"
           >
@@ -91,7 +90,6 @@ export default function Projects() {
 
 interface ProjectCardProps {
   name: string;
-  description?: string;
   href: string;
   imgSrc: string;
   children?: ReactNode;
