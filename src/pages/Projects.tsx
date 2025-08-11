@@ -3,6 +3,11 @@ import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
 import styles from "./Projects.module.css";
 
+// Import images as assets
+import wdftImage from "../assets/images/wdft.png";
+import browsynImage from "../assets/images/browsyn.png";
+import yattaImage from "../assets/images/yatta.png";
+
 export default function Projects() {
   return (
     <>
@@ -12,7 +17,7 @@ export default function Projects() {
           <h1>Selected Projects.</h1>
           <ProjectCard
             name="Water Data For Texas"
-            imgSrc="/images/wdft.png"
+            imgSrc={wdftImage}
             href="https://waterdatafortexas.org"
           >
             I work on a small team that develops and maintains Water Data For
@@ -33,7 +38,7 @@ export default function Projects() {
           </ProjectCard>
           <ProjectCard
             name="Browsyn"
-            imgSrc="/images/browsyn.png"
+            imgSrc={browsynImage}
             href="https://github.com/rhroberts/browsyn/"
           >
             Browsyn is my ongoing attempt to emulate an analog synthesizer using
@@ -57,7 +62,7 @@ export default function Projects() {
           <ProjectCard
             name="yatta"
             description="yet another time tracking application"
-            imgSrc="/images/yatta.png"
+            imgSrc={yattaImage}
             href="https://github.com/rhroberts/yatta"
           >
             yatta is Yet Another Time Tracking Application. It is implemented in

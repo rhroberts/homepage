@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
 import styles from "./Resume.module.css";
+import iconSvg from "../assets/icon.svg";
 
 export default function Resume() {
   return (
@@ -12,7 +13,7 @@ export default function Resume() {
             <h1>
               Rusty Roberts
               <img
-                src="/icon.svg"
+                src={iconSvg}
                 style={{
                   width: "32px",
                   marginLeft: "10px",

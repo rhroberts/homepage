@@ -7,7 +7,8 @@
 
 @font-face {
   font-family: "NationalParkRegular";
-  src: url(/static/font-regular);
+  src: url("../assets/fonts/NationalPark-Regular.otf") format("opentype");
+  font-display: swap;
 }
 
 html {

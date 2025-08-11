@@ -30,8 +30,11 @@ describe("Projects", () => {
     render(<Projects />);
     const images = screen.getAllByRole("img");
     // Filter out navigation/footer icons to focus on project images
-    const projectImages = images.filter((img) =>
-      img.getAttribute("src")?.includes("/images/"),
+    const projectImages = images.filter(
+      (img) =>
+        img.getAttribute("src")?.includes("wdft") ||
+        img.getAttribute("src")?.includes("browsyn") ||
+        img.getAttribute("src")?.includes("yatta"),
     );
     expect(projectImages.length).toBeGreaterThan(0);
   });
@@ -39,8 +42,11 @@ describe("Projects", () => {
   it("has clickable project images", () => {
     render(<Projects />);
     const images = screen.getAllByRole("img");
-    const projectImages = images.filter((img) =>
-      img.getAttribute("src")?.includes("/images/"),
+    const projectImages = images.filter(
+      (img) =>
+        img.getAttribute("src")?.includes("wdft") ||
+        img.getAttribute("src")?.includes("browsyn") ||
+        img.getAttribute("src")?.includes("yatta"),
     );
 
     // All project images should be wrapped in links
