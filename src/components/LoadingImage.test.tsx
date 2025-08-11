@@ -30,13 +30,10 @@ describe("LoadingImage", () => {
 
     const img = screen.getByRole("img");
 
-    // Initially spinner should be visible
     expect(screen.getByTestId("loading-spinner")).toBeInTheDocument();
 
-    // Simulate image load
     fireEvent.load(img);
 
-    // Spinner should be gone after load
     expect(screen.queryByTestId("loading-spinner")).not.toBeInTheDocument();
   });
 
@@ -67,10 +64,8 @@ describe("LoadingImage", () => {
 
     const img = screen.getByRole("img");
 
-    // Simulate image error
     fireEvent.error(img);
 
-    // Spinner should be gone after error
     expect(screen.queryByTestId("loading-spinner")).not.toBeInTheDocument();
   });
 

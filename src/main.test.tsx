@@ -85,7 +85,6 @@ describe("Navigation Edge Cases", () => {
   });
 
   it("supports Suspense fallback component", () => {
-    // Test that our Loading component renders correctly
     const { getByText } = render(
       <div
         style={{

@@ -1,16 +1,16 @@
 # Claude Instructions for Homepage Project
 
-## Code Formatting
+## Coding style
 
-- **ALWAYS** run `npm run format` after editing or creating any files
-- This project uses Prettier for code formatting with default settings
-- All code must be properly formatted before considering a task complete
+- Prioritize readibility and maintainability
+- Refrain from overcommenting code
 
 ## Development Workflow
 
-- Run tests with `npm run test:run` after making changes
-- Use `npm run lint` to check for linting issues
-- Use `npm run build:prod` for production builds
+- After making any changes:
+  - Format files with `npm run format`
+  - Check for linting issues with `npm run lint`
+  - Run tests with `npm run test:run`
 
 ## Project Structure
 
@@ -20,9 +20,8 @@
 - Static assets are in `/static/`
 - CSS modules provide component-level styling isolation
 
-## URLs
+## Infrastructure
 
-- Use clean URLs without file extensions or trailing slashes
-- Home: `/`
-- Projects: `/projects`
-- Resume: `/resume`
+- The source code for this project is hosted on GitHub
+- GitHub Actions are used for continuous integration and deployment
+- The website this project implements is hosted on GitHub pages
