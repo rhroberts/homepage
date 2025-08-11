@@ -27,10 +27,15 @@
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  width: var(--content-width-percent);
-  max-width: var(--content-max-width);
+  width: 100%;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.navItemsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navItem {
