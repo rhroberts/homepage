@@ -2,12 +2,3 @@
   margin-top: 12px;
   margin-bottom: 48px;
 }
-
-.projectCardImage {
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px gray;
-}
-
-.projectCardImage:hover {
-  box-shadow: 2px 2px 10px #444444;
-}

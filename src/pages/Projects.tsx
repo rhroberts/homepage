@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
+import LoadingImage from "../components/LoadingImage.tsx";
 import styles from "./Projects.module.css";
 
 // Import images as assets
@@ -101,7 +102,7 @@ function ProjectCard({ name, imgSrc, href, children }: ProjectCardProps) {
     <div>
       <h2>{name}</h2>
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <img className={styles.projectCardImage} src={imgSrc} alt={name} />
+        <LoadingImage src={imgSrc} alt={name} width={400} height={250} />
       </a>
       <div className={styles.projectCardContent}>{children}</div>
     </div>
