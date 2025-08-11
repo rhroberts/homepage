@@ -26,9 +26,14 @@ const Loading = () => (
   </div>
 );
 
+const getPathFromHash = (): string => {
+  const hash = window.location.hash;
+  return hash.startsWith("#") ? hash.slice(1) : "/";
+};
+
 export const App = () => {
-  const path = window.location.pathname as keyof typeof routes;
-  const Component = routes[path] || Home; // Default to Home for unknown routes
+  const path = getPathFromHash() as keyof typeof routes;
+  const Component = routes[path] || Home;
 
   return (
     <Suspense fallback={<Loading />}>

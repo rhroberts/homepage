@@ -41,15 +41,15 @@ describe("NavBar", () => {
     const resumeLinks = screen.getAllByRole("link", { name: "Resume" });
 
     homeLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "/");
+      expect(link).toHaveAttribute("href", "#/");
     });
 
     projectsLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "/projects");
+      expect(link).toHaveAttribute("href", "#/projects");
     });
 
     resumeLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "/resume");
+      expect(link).toHaveAttribute("href", "#/resume");
     });
   });
 

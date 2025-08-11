@@ -18,7 +18,7 @@ vi.mock("./pages/Resume", () => ({
 describe("App Routing", () => {
   beforeEach(() => {
     Object.defineProperty(globalThis, "location", {
-      value: { pathname: "/" },
+      value: { pathname: "/", hash: "" },
       writable: true,
     });
   });
@@ -32,8 +32,8 @@ describe("App Routing", () => {
     });
   });
 
-  it("renders Home page for root path", async () => {
-    globalThis.location.pathname = "/";
+  it("renders Home page for root hash", async () => {
+    globalThis.location.hash = "#/";
     render(<App />);
 
     await waitFor(() => {
@@ -41,8 +41,8 @@ describe("App Routing", () => {
     });
   });
 
-  it("renders Projects page for /projects path", async () => {
-    globalThis.location.pathname = "/projects";
+  it("renders Projects page for #/projects hash", async () => {
+    globalThis.location.hash = "#/projects";
     render(<App />);
 
     await waitFor(() => {
@@ -50,8 +50,8 @@ describe("App Routing", () => {
     });
   });
 
-  it("renders Resume page for /resume path", async () => {
-    globalThis.location.pathname = "/resume";
+  it("renders Resume page for #/resume hash", async () => {
+    globalThis.location.hash = "#/resume";
     render(<App />);
 
     await waitFor(() => {
@@ -59,8 +59,8 @@ describe("App Routing", () => {
     });
   });
 
-  it("defaults to Home page for unknown paths", async () => {
-    globalThis.location.pathname = "/unknown";
+  it("defaults to Home page for unknown hashes", async () => {
+    globalThis.location.hash = "#/unknown";
     render(<App />);
 
     await waitFor(() => {

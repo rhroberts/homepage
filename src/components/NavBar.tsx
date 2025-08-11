@@ -51,17 +51,17 @@ export default function NavBar({ activePage }: NavBarProps) {
               [rhroberts.dev]
             </button>
             <div className={styles.navItemsWrapper}>
-              <NavItem name="Home" href="/" current={activePage === "Home"} />
+              <NavItem name="Home" href="#/" current={activePage === "Home"} />
               {" • "}
               <NavItem
                 name="Projects"
-                href="/projects"
+                href="#/projects"
                 current={activePage === "Projects"}
               />
               {" • "}
               <NavItem
                 name="Resume"
-                href="/resume"
+                href="#/resume"
                 current={activePage === "Resume"}
               />
             </div>
@@ -70,13 +70,17 @@ export default function NavBar({ activePage }: NavBarProps) {
             <div className={styles.menuContent}>
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>├─ </span>
-                <NavItem name="Home" href="/" current={activePage === "Home"} />
+                <NavItem
+                  name="Home"
+                  href="#/"
+                  current={activePage === "Home"}
+                />
               </div>
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>├─ </span>
                 <NavItem
                   name="Projects"
-                  href="/projects"
+                  href="#/projects"
                   current={activePage === "Projects"}
                 />
               </div>
@@ -84,7 +88,7 @@ export default function NavBar({ activePage }: NavBarProps) {
                 <span className={styles.treeChar}>└─ </span>
                 <NavItem
                   name="Resume"
-                  href="/resume"
+                  href="#/resume"
                   current={activePage === "Resume"}
                 />
               </div>
