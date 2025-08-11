@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Footer from "./Footer";
+import Footer from "./Footer.tsx";
 
 describe("Footer", () => {
   it("renders copyright information", () => {

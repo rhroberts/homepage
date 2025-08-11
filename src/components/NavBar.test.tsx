@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import NavBar from "./NavBar";
+import NavBar from "./NavBar.tsx";
 
 describe("NavBar", () => {
   it("renders the site title", () => {

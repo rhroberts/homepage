@@ -9,3 +9,6 @@ dist/
 
 # Claude Code
 .claude/
+
+# Test coverage reporting
+coverage/

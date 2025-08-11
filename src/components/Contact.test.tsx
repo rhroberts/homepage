@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import Contact from "./Contact";
+import Contact from "./Contact.tsx";
 
 describe("Contact", () => {
   it("renders contact section title", () => {
