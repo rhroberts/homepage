@@ -1,20 +1,10 @@
-/** @jsx h */
-
-import {
-  Fragment,
-  h,
-  Helmet,
-} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
-import NavBar from "../components/navbar.tsx";
-import Contact from "../components/contact.tsx";
-import Footer from "../components/footer.tsx";
+import NavBar from "../components/NavBar.tsx";
+import Contact from "../components/Contact.tsx";
+import Footer from "../components/Footer.tsx";
 
 export default function Home() {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Home - Rusty Roberts</title>
-      </Helmet>
+    <>
       <NavBar activePage="Home" />
       <div id="content">
         <div id="main">
@@ -28,7 +18,11 @@ export default function Home() {
           <p>
             Professionally, I develop data-intensive, full-stack web
             applications for the{" "}
-            <a href="https://www.twdb.texas.gov" target="_blank">
+            <a
+              href="https://www.twdb.texas.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Texas Water Development Board
             </a>{" "}
             and maintain the cloud infrastructure they run on. For backend work,
@@ -41,12 +35,20 @@ export default function Home() {
           <p>
             Unprofessionally, I enjoy making things that combine music and code,
             like{" "}
-            <a href="https://rhroberts.github.io/browsyn/" target="_blank">
+            <a
+              href="https://rhroberts.github.io/browsyn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               this
             </a>{" "}
             analog-imitating software synthesizer built on the Web Audio API, or
             producing music and contributing audio-related code for{" "}
-            <a href="https://github.com/dmarc3/bakken" target="_blank">
+            <a
+              href="https://github.com/dmarc3/bakken"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               hobby video games
             </a>
             .
@@ -55,7 +57,11 @@ export default function Home() {
             From here, you can read about a few select{" "}
             <a href="/projects">projects</a> of mine, view my{" "}
             <a href="/resume">resume</a>, our checkout my public repositories on{" "}
-            <a href="https://github.com/rhroberts" target="_blank">
+            <a
+              href="https://github.com/rhroberts"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
             .
@@ -65,6 +71,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 }

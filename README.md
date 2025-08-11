@@ -1,12 +1,45 @@
 # Homepage
 
-Another iteration of my personal website. Experimenting with
-[Deno](https://deno.land/) and [Nano JSX](https://nanojsx.io/).
+My personal website.
 
-## Dev Server
+## Development
 
-Requires [deno cli](https://deno.land/#installation).
+Requires [Node.js](https://nodejs.org/).
 
 ```bash
-deno run --allow-net=:8000 --allow-read --config tsconfig.json --watch server.tsx
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Vite preview
+npm run preview
+
+# Run tests in watch mode
+npm run test
+
+# Run tests once
+npm run test:run
+
+# Format code
+npm run format
+
+# Lint code
+npm run lint
 ```
+
+The development server runs at `http://localhost:5173` with hot module replacement.
+
+## Deployment
+
+This is a Single Page Application (SPA) with client-side routing. Run `npm run build` to create the production build.
+
+### Deployment Options:
+
+- **Netlify/Vercel**: Will automatically handle SPA routing
+- **GitHub Pages**: Includes 404.html fallback for routing
+- **Other static hosts**: The `_redirects` file configures SPA routing

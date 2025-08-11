@@ -1,12 +1,10 @@
-/** @jsx h */
-
-import { h } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <div id="footer-wrapper">
-      <footer>
-        &#169; 2022 &bullet; Rusty Roberts &bullet;{" "}
+    <div className={styles.footerWrapper}>
+      <footer className={styles.footer}>
+        © 2022 • Rusty Roberts •{" "}
         <a
           href="https://github.com/rhroberts/homepage"
           target="_blank"

@@ -1,33 +1,30 @@
-/** @jsx h */
-
-import {
-  Fragment,
-  h,
-  Helmet,
-} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
-import NavBar from "../components/navbar.tsx";
-import Footer from "../components/footer.tsx";
+import NavBar from "../components/NavBar.tsx";
+import Footer from "../components/Footer.tsx";
+import styles from "./Resume.module.css";
+import iconSvg from "../assets/icon.svg";
 
 export default function Resume() {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Resume - Rusty Roberts</title>
-      </Helmet>
+    <>
       <NavBar activePage="Resume" />
       <div id="content">
         <div id="main">
-          <div id="resume">
+          <div className={styles.resume}>
             <h1>
               Rusty Roberts
               <img
-                src="/icon.svg"
-                style="width:32px;margin-left:10px;transform:translateY(2px);"
-              ></img>
+                src={iconSvg}
+                style={{
+                  width: "32px",
+                  marginLeft: "10px",
+                  transform: "translateY(2px)",
+                }}
+                alt="Site icon"
+              />
             </h1>
             <address>
-              <a href="mailto:mail@rhroberts.dev">mail @ rhroberts.dev</a>
-              &bullet;
+              <a href="mailto:mail@rhroberts.dev">mail@rhroberts.dev</a>
+              {" • "}
               <a
                 href="https://github.com/rhroberts"
                 target="_blank"
@@ -188,6 +185,6 @@ export default function Resume() {
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 }

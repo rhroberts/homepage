@@ -1,27 +1,23 @@
-/** @jsx h */
+import { ReactNode } from "react";
+import NavBar from "../components/NavBar.tsx";
+import Footer from "../components/Footer.tsx";
+import styles from "./Projects.module.css";
 
-import {
-  FC,
-  Fragment,
-  h,
-  Helmet,
-} from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
-import NavBar from "../components/navbar.tsx";
-import Footer from "../components/footer.tsx";
+// Import images as assets
+import wdftImage from "../assets/images/wdft.png";
+import browsynImage from "../assets/images/browsyn.png";
+import yattaImage from "../assets/images/yatta.png";
 
 export default function Projects() {
   return (
-    <Fragment>
-      <Helmet>
-        <title>Projects - Rusty Roberts</title>
-      </Helmet>
+    <>
       <NavBar activePage="Projects" />
       <div id="content">
         <div id="main">
           <h1>Selected Projects.</h1>
           <ProjectCard
             name="Water Data For Texas"
-            imgSrc="wdft.png"
+            imgSrc={wdftImage}
             href="https://waterdatafortexas.org"
           >
             I work on a small team that develops and maintains Water Data For
@@ -29,7 +25,11 @@ export default function Projects() {
             the state's critical water resources. The site has over 10k weekly
             active users. Several open-source libraries related to the site are
             available on our agency's{" "}
-            <a href="https://github.com/twdb" target="_blank">
+            <a
+              href="https://github.com/twdb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub page
             </a>
             . The majority of the site's backend is written in Python, with
@@ -38,7 +38,7 @@ export default function Projects() {
           </ProjectCard>
           <ProjectCard
             name="Browsyn"
-            imgSrc="browsyn.png"
+            imgSrc={browsynImage}
             href="https://github.com/rhroberts/browsyn/"
           >
             Browsyn is my ongoing attempt to emulate an analog synthesizer using
@@ -50,7 +50,11 @@ export default function Projects() {
             toy a the moment, I have designs to add MIDI input and other
             essentials to make it a competent instrument for audio production.
             You can try a demo of the project{" "}
-            <a href="https://rhroberts.github.io/browsyn/" target="_blank">
+            <a
+              href="https://rhroberts.github.io/browsyn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               here
             </a>
             .
@@ -58,7 +62,7 @@ export default function Projects() {
           <ProjectCard
             name="yatta"
             description="yet another time tracking application"
-            imgSrc="yatta.png"
+            imgSrc={yattaImage}
             href="https://github.com/rhroberts/yatta"
           >
             yatta is Yet Another Time Tracking Application. It is implemented in
@@ -80,25 +84,26 @@ export default function Projects() {
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 }
 
-function ProjectCard(props: {
+interface ProjectCardProps {
   name: string;
   description?: string;
   href: string;
   imgSrc: string;
-  children?: FC;
-}) {
-  const { name, description, imgSrc, href, children } = props;
+  children?: ReactNode;
+}
+
+function ProjectCard({ name, imgSrc, href, children }: ProjectCardProps) {
   return (
-    <div class="project-card">
+    <div>
       <h2>{name}</h2>
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <img class="project-card-image" src={imgSrc} alt={name} />
+        <img className={styles.projectCardImage} src={imgSrc} alt={name} />
       </a>
-      <div class="project-card-content">{children}</div>
+      <div className={styles.projectCardContent}>{children}</div>
     </div>
   );
 }

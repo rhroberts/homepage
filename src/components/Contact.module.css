@@ -1,0 +1,14 @@
+.contact {
+  padding-top: 12px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
+  padding-left: 9px;
+  padding-right: 9px;
+}
