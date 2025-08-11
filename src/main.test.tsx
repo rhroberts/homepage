@@ -3,7 +3,6 @@ import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { App } from "./main.tsx";
 
-// Mock the page components
 vi.mock("./pages/Home", () => ({
   default: () => <div data-testid="home-page">Home Page</div>,
 }));
@@ -18,16 +17,19 @@ vi.mock("./pages/Resume", () => ({
 
 describe("App Routing", () => {
   beforeEach(() => {
-    // Reset location before each test
     Object.defineProperty(globalThis, "location", {
       value: { pathname: "/" },
       writable: true,
     });
   });
 
-  it("shows loading state initially", () => {
+  it("shows loading state initially", async () => {
     render(<App />);
     expect(screen.getByText("Loading...")).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
+    });
   });
 
   it("renders Home page for root path", async () => {

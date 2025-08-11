@@ -23,7 +23,7 @@ export default function Resume() {
               />
             </h1>
             <address>
-              <a href="mailto:mail@rhroberts.dev">mail@rhroberts.dev</a>
+              <a href="mailto:mail@rhroberts.dev">mail @ rhroberts.dev</a>
               {" • "}
               <a
                 href="https://github.com/rhroberts"

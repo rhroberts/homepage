@@ -17,7 +17,7 @@ describe("Home", () => {
 
   it("renders Footer component", () => {
     render(<Home />);
-    expect(screen.getByText(/© 2022/)).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("renders Contact component", () => {
@@ -28,7 +28,6 @@ describe("Home", () => {
   it("includes navigation to other pages", () => {
     render(<Home />);
 
-    // Check for internal navigation links
     const projectsLinks = screen.getAllByText(/projects/i);
     expect(projectsLinks.length).toBeGreaterThan(0);
 
@@ -39,13 +38,11 @@ describe("Home", () => {
   it("includes external links with proper security attributes", () => {
     render(<Home />);
 
-    // Find external links and verify they have security attributes
     const externalLinks = screen
       .getAllByRole("link")
       .filter((link) => link.getAttribute("target") === "_blank");
     expect(externalLinks.length).toBeGreaterThan(0);
 
-    // Verify external links have proper rel attributes for security
     externalLinks.forEach((link) => {
       const rel = link.getAttribute("rel");
       if (rel) {

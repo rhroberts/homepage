@@ -16,8 +16,16 @@
   z-index: 1;
 }
 
+.navbarContainer {
+  position: relative;
+  width: var(--content-width-percent);
+  max-width: var(--content-max-width);
+}
+
 .navbar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: left;
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
@@ -42,14 +50,41 @@
   display: none;
   flex-direction: column;
   color: var(--bg-color);
+  width: 100vw;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.menuContent {
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.menuOpen {
+  display: flex;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  line-height: 1.2;
   background-color: black;
-  padding-left: 24px;
-  padding-bottom: 24px;
-  position: fixed;
-  top: 48px;
-  z-index: 1;
+}
+
+.menuItem:last-child .treeChar {
+  content: "└─ ";
+}
+
+.treeChar {
+  margin-right: 4px;
 }
 
 .menuButton {
@@ -69,5 +104,11 @@
   .menuButton:hover {
     cursor: pointer;
     color: var(--bg-color);
+  }
+}
+
+@media (min-width: 377px) {
+  .menu {
+    display: none !important;
   }
 }
