@@ -5,7 +5,7 @@ import Footer from "./Footer.tsx";
 describe("Footer", () => {
   it("renders copyright information", () => {
     render(<Footer />);
-    expect(screen.getByText(/© 2022/)).toBeInTheDocument();
+    expect(screen.getByText(/© 2025/)).toBeInTheDocument();
     expect(screen.getByText(/Rusty Roberts/)).toBeInTheDocument();
   });
 

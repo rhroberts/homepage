@@ -55,7 +55,6 @@ describe("NavBar", () => {
 
   it("renders bullet separators between nav items", () => {
     render(<NavBar activePage="Home" />);
-    // Check that bullet characters are present in the document
     expect(document.body.textContent).toContain("•");
   });
 
@@ -63,21 +62,17 @@ describe("NavBar", () => {
     const { container } = render(<NavBar activePage="Home" />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
-    // Find the menu element more specifically
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(
       (el) =>
         el.className.includes("menu") && !el.className.includes("menuButton"),
     );
 
-    // Menu should not be visible initially
     expect(menu?.className).not.toContain("menuOpen");
 
-    // Click button to open menu
     fireEvent.click(menuButton);
     expect(menu?.className).toContain("menuOpen");
 
-    // Click button again to close menu
     fireEvent.click(menuButton);
     expect(menu?.className).not.toContain("menuOpen");
   });
@@ -86,24 +81,20 @@ describe("NavBar", () => {
     const { container } = render(<NavBar activePage="Home" />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
-    // Find the menu element more specifically
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(
       (el) =>
         el.className.includes("menu") && !el.className.includes("menuButton"),
     );
 
-    // Open the menu
     fireEvent.click(menuButton);
     expect(menu?.className).toContain("menuOpen");
 
-    // Click outside the navbar
     fireEvent.mouseDown(document.body);
     expect(menu?.className).not.toContain("menuOpen");
   });
 
   it("closes menu when window is resized above mobile breakpoint", () => {
-    // Mock window.innerWidth
     Object.defineProperty(window, "innerWidth", {
       writable: true,
       configurable: true,
@@ -113,18 +104,15 @@ describe("NavBar", () => {
     const { container } = render(<NavBar activePage="Home" />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
-    // Find the menu element more specifically
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(
       (el) =>
         el.className.includes("menu") && !el.className.includes("menuButton"),
     );
 
-    // Open the menu
     fireEvent.click(menuButton);
     expect(menu?.className).toContain("menuOpen");
 
-    // Resize window above breakpoint
     act(() => {
       window.innerWidth = 400;
       window.dispatchEvent(new Event("resize"));

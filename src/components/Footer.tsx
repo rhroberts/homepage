@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div className={styles.footerWrapper}>
       <footer className={styles.footer}>
-        © 2022 • Rusty Roberts •{" "}
+        © 2025 • Rusty Roberts •{" "}
         <a
           href="https://github.com/rhroberts/homepage"
           target="_blank"

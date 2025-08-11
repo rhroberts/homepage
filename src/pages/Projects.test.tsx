@@ -17,7 +17,7 @@ describe("Projects", () => {
 
   it("renders Footer component", () => {
     render(<Projects />);
-    expect(screen.getByText(/© 2022/)).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("renders project headings", () => {
@@ -29,7 +29,6 @@ describe("Projects", () => {
   it("renders project images", () => {
     render(<Projects />);
     const images = screen.getAllByRole("img");
-    // Filter out navigation/footer icons to focus on project images
     const projectImages = images.filter(
       (img) =>
         img.getAttribute("src")?.includes("wdft") ||
@@ -49,7 +48,6 @@ describe("Projects", () => {
         img.getAttribute("src")?.includes("yatta"),
     );
 
-    // All project images should be wrapped in links
     projectImages.forEach((image) => {
       expect(image.closest("a")).toBeTruthy();
     });
@@ -58,13 +56,11 @@ describe("Projects", () => {
   it("includes external links with proper security attributes", () => {
     render(<Projects />);
 
-    // Find external links and verify they have security attributes
     const externalLinks = screen
       .getAllByRole("link")
       .filter((link) => link.getAttribute("target") === "_blank");
     expect(externalLinks.length).toBeGreaterThan(0);
 
-    // Verify external links have proper rel attributes for security
     externalLinks.forEach((link) => {
       const rel = link.getAttribute("rel");
       if (rel) {
