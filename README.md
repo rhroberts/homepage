@@ -38,8 +38,4 @@ The development server runs at `http://localhost:5173` with hot module replaceme
 
 This is a Single Page Application (SPA) with client-side routing. Run `npm run build` to create the production build.
 
-### Deployment Options:
-
-- **Netlify/Vercel**: Will automatically handle SPA routing
-- **GitHub Pages**: Includes 404.html fallback for routing
-- **Other static hosts**: The `_redirects` file configures SPA routing
+Merging or pushing to `main` branch will automatically build and deploy to GitHub pages, if code checks pass.
