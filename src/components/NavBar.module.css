@@ -18,6 +18,8 @@
 
 .navbar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: left;
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
