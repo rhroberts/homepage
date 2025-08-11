@@ -6,7 +6,7 @@ import iconSvg from "../assets/icon.svg";
 export default function Resume() {
   return (
     <>
-      <NavBar activePage="Resume" />
+      <NavBar />
       <div id="content">
         <div id="main">
           <div className={styles.resume}>

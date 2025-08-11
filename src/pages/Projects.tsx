@@ -11,7 +11,7 @@ import yattaImage from "../assets/images/yatta.png";
 export default function Projects() {
   return (
     <>
-      <NavBar activePage="Projects" />
+      <NavBar />
       <div id="content">
         <div id="main">
           <h1>Selected Projects.</h1>

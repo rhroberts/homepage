@@ -1,32 +1,40 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import "@testing-library/jest-dom";
 import Home from "./Home.tsx";
+
+const HomeWithRouter = () => (
+  <MemoryRouter>
+    <Home />
+  </MemoryRouter>
+);
 
 describe("Home", () => {
   it("renders the main page heading", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
     expect(
       screen.getByRole("heading", { name: "Welcome." }),
     ).toBeInTheDocument();
   });
 
   it("renders NavBar component", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
     expect(screen.getByText("[rhroberts.dev]")).toBeInTheDocument();
   });
 
   it("renders Footer component", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("renders Contact component", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
     expect(screen.getByText("Contact")).toBeInTheDocument();
   });
 
   it("includes navigation to other pages", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
 
     const projectsLinks = screen.getAllByText(/projects/i);
     expect(projectsLinks.length).toBeGreaterThan(0);
@@ -36,7 +44,7 @@ describe("Home", () => {
   });
 
   it("includes external links with proper security attributes", () => {
-    render(<Home />);
+    render(<HomeWithRouter />);
 
     const externalLinks = screen
       .getAllByRole("link")

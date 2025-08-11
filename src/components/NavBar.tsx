@@ -1,11 +1,23 @@
 import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
 
-interface NavBarProps {
-  activePage: string;
-}
+const getActivePageFromPath = (pathname: string): string => {
+  switch (pathname) {
+    case "/":
+      return "Home";
+    case "/projects":
+      return "Projects";
+    case "/resume":
+      return "Resume";
+    default:
+      return "Home";
+  }
+};
 
-export default function NavBar({ activePage }: NavBarProps) {
+export default function NavBar() {
+  const location = useLocation();
+  const activePage = getActivePageFromPath(location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
 
@@ -51,17 +63,17 @@ export default function NavBar({ activePage }: NavBarProps) {
               [rhroberts.dev]
             </button>
             <div className={styles.navItemsWrapper}>
-              <NavItem name="Home" href="#/" current={activePage === "Home"} />
+              <NavItem name="Home" to="/" current={activePage === "Home"} />
               {" • "}
               <NavItem
                 name="Projects"
-                href="#/projects"
+                to="/projects"
                 current={activePage === "Projects"}
               />
               {" • "}
               <NavItem
                 name="Resume"
-                href="#/resume"
+                to="/resume"
                 current={activePage === "Resume"}
               />
             </div>
@@ -70,17 +82,13 @@ export default function NavBar({ activePage }: NavBarProps) {
             <div className={styles.menuContent}>
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>├─ </span>
-                <NavItem
-                  name="Home"
-                  href="#/"
-                  current={activePage === "Home"}
-                />
+                <NavItem name="Home" to="/" current={activePage === "Home"} />
               </div>
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>├─ </span>
                 <NavItem
                   name="Projects"
-                  href="#/projects"
+                  to="/projects"
                   current={activePage === "Projects"}
                 />
               </div>
@@ -88,7 +96,7 @@ export default function NavBar({ activePage }: NavBarProps) {
                 <span className={styles.treeChar}>└─ </span>
                 <NavItem
                   name="Resume"
-                  href="#/resume"
+                  to="/resume"
                   current={activePage === "Resume"}
                 />
               </div>
@@ -102,17 +110,17 @@ export default function NavBar({ activePage }: NavBarProps) {
 
 interface NavItemProps {
   name: string;
-  href: string;
+  to: string;
   current: boolean;
 }
 
-function NavItem({ name, href, current }: NavItemProps) {
+function NavItem({ name, to, current }: NavItemProps) {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       className={`${styles.navItem} ${current ? styles.navActive : ""}`}
     >
       {name}
-    </a>
+    </Link>
   );
 }

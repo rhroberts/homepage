@@ -1,33 +1,41 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import "@testing-library/jest-dom";
 import Projects from "./Projects.tsx";
+
+const ProjectsWithRouter = () => (
+  <MemoryRouter>
+    <Projects />
+  </MemoryRouter>
+);
 
 describe("Projects", () => {
   it("renders the main page heading", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     expect(
       screen.getByRole("heading", { name: "Selected Projects." }),
     ).toBeInTheDocument();
   });
 
   it("renders NavBar component", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     expect(screen.getByText("[rhroberts.dev]")).toBeInTheDocument();
   });
 
   it("renders Footer component", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("renders project headings", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     const projectHeadings = screen.getAllByRole("heading", { level: 2 });
     expect(projectHeadings.length).toBeGreaterThan(0);
   });
 
   it("renders project images", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     const images = screen.getAllByRole("img");
     const projectImages = images.filter(
       (img) =>
@@ -39,7 +47,7 @@ describe("Projects", () => {
   });
 
   it("has clickable project images", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
     const images = screen.getAllByRole("img");
     const projectImages = images.filter(
       (img) =>
@@ -54,7 +62,7 @@ describe("Projects", () => {
   });
 
   it("includes external links with proper security attributes", () => {
-    render(<Projects />);
+    render(<ProjectsWithRouter />);
 
     const externalLinks = screen
       .getAllByRole("link")

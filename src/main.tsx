@@ -1,16 +1,11 @@
 import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./styles/global.css";
 
 const Home = lazy(() => import("./pages/Home.tsx"));
 const Projects = lazy(() => import("./pages/Projects.tsx"));
 const Resume = lazy(() => import("./pages/Resume.tsx"));
-
-const routes = {
-  "/": Home,
-  "/projects": Projects,
-  "/resume": Resume,
-} as const;
 
 const Loading = () => (
   <div
@@ -26,19 +21,24 @@ const Loading = () => (
   </div>
 );
 
-const getPathFromHash = (): string => {
-  const hash = window.location.hash;
-  return hash.startsWith("#") ? hash.slice(1) : "/";
+export const AppRoutes = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Suspense>
+  );
 };
 
 export const App = () => {
-  const path = getPathFromHash() as keyof typeof routes;
-  const Component = routes[path] || Home;
-
   return (
-    <Suspense fallback={<Loading />}>
-      <Component />
-    </Suspense>
+    <HashRouter>
+      <AppRoutes />
+    </HashRouter>
   );
 };
 

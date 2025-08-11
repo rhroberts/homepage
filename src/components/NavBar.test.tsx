@@ -1,15 +1,23 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import "@testing-library/jest-dom";
 import NavBar from "./NavBar.tsx";
+
+const NavBarWithRouter = ({ initialPath = "/" }) => (
+  <MemoryRouter initialEntries={[initialPath]}>
+    <NavBar />
+  </MemoryRouter>
+);
 
 describe("NavBar", () => {
   it("renders the site title", () => {
-    render(<NavBar activePage="Home" />);
+    render(<NavBarWithRouter />);
     expect(screen.getByText("[rhroberts.dev]")).toBeInTheDocument();
   });
 
   it("shows correct active state for Home page", () => {
-    render(<NavBar activePage="Home" />);
+    render(<NavBarWithRouter initialPath="/" />);
     const homeLinks = screen.getAllByText("Home");
 
     homeLinks.forEach((link) => {
@@ -19,7 +27,7 @@ describe("NavBar", () => {
   });
 
   it("shows correct active state for Projects page", () => {
-    render(<NavBar activePage="Projects" />);
+    render(<NavBarWithRouter initialPath="/projects" />);
     const projectsLinks = screen.getAllByText("Projects");
 
     projectsLinks.forEach((link) => {
@@ -33,33 +41,57 @@ describe("NavBar", () => {
     });
   });
 
-  it("renders all navigation links with correct hrefs", () => {
-    render(<NavBar activePage="Home" />);
+  it("shows correct active state for Resume page", () => {
+    render(<NavBarWithRouter initialPath="/resume" />);
+    const resumeLinks = screen.getAllByText("Resume");
+
+    resumeLinks.forEach((link) => {
+      expect(link.className).toContain("navActive");
+    });
+
+    const homeLinks = screen.getAllByText("Home");
+    homeLinks.forEach((link) => {
+      expect(link.className).toContain("navItem");
+      expect(link.className).not.toContain("navActive");
+    });
+  });
+
+  it("defaults to Home active state for unknown paths", () => {
+    render(<NavBarWithRouter initialPath="/unknown-path" />);
+    const homeLinks = screen.getAllByText("Home");
+
+    homeLinks.forEach((link) => {
+      expect(link.className).toContain("navActive");
+    });
+  });
+
+  it("renders all navigation links with correct paths", () => {
+    render(<NavBarWithRouter />);
 
     const homeLinks = screen.getAllByRole("link", { name: "Home" });
     const projectsLinks = screen.getAllByRole("link", { name: "Projects" });
     const resumeLinks = screen.getAllByRole("link", { name: "Resume" });
 
     homeLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "#/");
+      expect(link).toHaveAttribute("href", "/");
     });
 
     projectsLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "#/projects");
+      expect(link).toHaveAttribute("href", "/projects");
     });
 
     resumeLinks.forEach((link) => {
-      expect(link).toHaveAttribute("href", "#/resume");
+      expect(link).toHaveAttribute("href", "/resume");
     });
   });
 
   it("renders bullet separators between nav items", () => {
-    render(<NavBar activePage="Home" />);
+    render(<NavBarWithRouter />);
     expect(document.body.textContent).toContain("•");
   });
 
   it("toggles mobile menu when button is clicked", () => {
-    const { container } = render(<NavBar activePage="Home" />);
+    const { container } = render(<NavBarWithRouter />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
     const menus = container.querySelectorAll('div[class*="menu"]');
@@ -78,7 +110,7 @@ describe("NavBar", () => {
   });
 
   it("closes menu when clicking outside", () => {
-    const { container } = render(<NavBar activePage="Home" />);
+    const { container } = render(<NavBarWithRouter />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
     const menus = container.querySelectorAll('div[class*="menu"]');
@@ -101,7 +133,7 @@ describe("NavBar", () => {
       value: 375,
     });
 
-    const { container } = render(<NavBar activePage="Home" />);
+    const { container } = render(<NavBarWithRouter />);
     const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
 
     const menus = container.querySelectorAll('div[class*="menu"]');

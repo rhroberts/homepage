@@ -5,7 +5,7 @@ import Footer from "../components/Footer.tsx";
 export default function Home() {
   return (
     <>
-      <NavBar activePage="Home" />
+      <NavBar />
       <div id="content">
         <div id="main">
           <h1>Welcome.</h1>
@@ -55,8 +55,9 @@ export default function Home() {
           </p>
           <p>
             From here, you can read about a few select{" "}
-            <a href="/projects">projects</a> of mine, view my{" "}
-            <a href="/resume">resume</a>, our checkout my public repositories on{" "}
+            <a href="#/projects">projects</a> of mine, view my{" "}
+            <a href="#/resume">resume</a>, our checkout my public repositories
+            on{" "}
             <a
               href="https://github.com/rhroberts"
               target="_blank"
