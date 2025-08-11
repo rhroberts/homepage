@@ -9,13 +9,4 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
   },
-  server: {
-    // Configure proper MIME types for font files
-    middlewareMode: false,
-    headers: {
-      // This won't work for static files, need different approach
-    },
-  },
-  // Ensure fonts are treated as assets
-  assetsInclude: ["**/*.otf", "**/*.woff", "**/*.woff2", "**/*.ttf"],
 });
