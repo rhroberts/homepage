@@ -1,11 +1,10 @@
-name: PR Checks
+name: Check Code Quality and Build
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
-  check:
+  check-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,3 +31,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./dist

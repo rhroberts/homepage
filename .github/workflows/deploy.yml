@@ -15,44 +15,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  check-and-build:
+    uses: ./.github/workflows/code-check-and-build.yml
+
+  deploy:
+    needs: check-and-build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
         with:
-          node-version: "24"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run formatting check
-        run: npm run format:check
-
-      - name: Run linting
-        run: npm run lint
-
-      - name: Run tests
-        run: npm run test:run
-
-      - name: Build project
-        run: npm run build
+          name: dist
+          path: ./dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "./dist"
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,0 +1,9 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  pr-checks:
+    uses: ./.github/workflows/code-check-and-build.yml
