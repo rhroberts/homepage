@@ -2,19 +2,16 @@ import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/global.css";
 
-// Lazy load pages for optimal code splitting
 const Home = lazy(() => import("./pages/Home.tsx"));
 const Projects = lazy(() => import("./pages/Projects.tsx"));
 const Resume = lazy(() => import("./pages/Resume.tsx"));
 
-// Route configuration for maintainability
 const routes = {
   "/": Home,
   "/projects": Projects,
   "/resume": Resume,
 } as const;
 
-// Better loading component
 const Loading = () => (
   <div
     style={{
@@ -29,7 +26,6 @@ const Loading = () => (
   </div>
 );
 
-// Simplified App component
 export const App = () => {
   const path = window.location.pathname as keyof typeof routes;
   const Component = routes[path] || Home; // Default to Home for unknown routes
