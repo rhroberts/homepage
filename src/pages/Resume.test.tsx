@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, expect, it, beforeEach, afterEach, vi } from "vitest";
+import { render, screen, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import Resume from "./Resume.tsx";
@@ -11,10 +11,10 @@ const ResumeWithRouter = () => (
 );
 
 describe("Resume", () => {
-  it("renders the main heading with name", () => {
+  it("renders the main heading", () => {
     render(<ResumeWithRouter />);
     expect(
-      screen.getByRole("heading", { name: /Rusty Roberts/ }),
+      screen.getByRole("heading", { name: "Resume." }),
     ).toBeInTheDocument();
   });
 
@@ -28,64 +28,194 @@ describe("Resume", () => {
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
-  it("renders all major section headings", () => {
+  it("includes download PDF button", () => {
     render(<ResumeWithRouter />);
-    const expectedHeadings = [
-      "Employment",
-      "Education",
-      "Technical Skills",
-      "Outreach",
-      "Select Publications and Presentations",
-    ];
-
-    expectedHeadings.forEach((heading) => {
-      expect(
-        screen.getByRole("heading", { name: heading }),
-      ).toBeInTheDocument();
-    });
-  });
-
-  it("includes contact information with proper links", () => {
-    render(<ResumeWithRouter />);
-
-    const emailLink = screen.getByRole("link", {
-      name: /mail @ rhroberts.dev/,
-    });
-    expect(emailLink).toHaveAttribute(
-      "href",
-      expect.stringContaining("mailto:"),
+    const downloadButton = screen.getByLabelText("Download PDF");
+    expect(downloadButton).toHaveAttribute(
+      "download",
+      "rusty-roberts-resume.pdf",
     );
-
-    const githubLink = screen.getByRole("link", { name: /github.com/ });
-    expect(githubLink).toHaveAttribute("target", "_blank");
+    expect(downloadButton).toHaveAttribute("href", "/documents/resume.pdf");
   });
 
-  it("has proper semantic structure with address element", () => {
+  it("includes open in new tab button", () => {
     render(<ResumeWithRouter />);
-    const addressElement = screen.getByRole("group");
-    expect(addressElement.tagName).toBe("ADDRESS");
+    const viewButton = screen.getByLabelText("Open in New Tab");
+    expect(viewButton).toHaveAttribute("target", "_blank");
+    expect(viewButton).toHaveAttribute("rel", "noopener noreferrer");
+    expect(viewButton).toHaveAttribute("href", "/documents/resume.pdf");
   });
 
-  it("includes external links with proper security attributes", () => {
+  it("renders PDF iframe viewer", () => {
     render(<ResumeWithRouter />);
+    const iframe = screen.getByTitle("Rusty Roberts Resume");
+    expect(iframe).toBeInTheDocument();
+    expect(iframe).toHaveAttribute("src", "/documents/resume.pdf");
+  });
 
-    const externalLinks = screen
-      .getAllByRole("link")
-      .filter((link) => link.getAttribute("target") === "_blank");
-    expect(externalLinks.length).toBeGreaterThan(0);
+  describe("responsive behavior", () => {
+    let mockInnerWidth: number;
 
-    externalLinks.forEach((link) => {
-      const rel = link.getAttribute("rel");
-      if (rel) {
-        expect(rel).toContain("noopener");
-      }
+    beforeEach(() => {
+      mockInnerWidth = 1024; // desktop by default
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: mockInnerWidth,
+      });
+    });
+
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
+
+    it("shows text and icons on desktop viewport", () => {
+      // Set desktop width
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: 1024,
+      });
+
+      render(<ResumeWithRouter />);
+
+      // Should show text content on desktop
+      expect(screen.getByText("Download PDF")).toBeInTheDocument();
+      expect(screen.getByText("Open in New Tab")).toBeInTheDocument();
+
+      // Should also have icons with the buttonIcon class
+      const container = screen.getByLabelText("Download PDF");
+      expect(container.querySelector("svg")).toBeInTheDocument();
+    });
+
+    it("shows only icons on mobile viewport", () => {
+      // Set mobile width
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: 320,
+      });
+
+      render(<ResumeWithRouter />);
+
+      // Should not show text content on mobile
+      expect(screen.queryByText("Download PDF")).not.toBeInTheDocument();
+      expect(screen.queryByText("Open in New Tab")).not.toBeInTheDocument();
+
+      // But buttons should still be accessible by aria-label
+      expect(screen.getByLabelText("Download PDF")).toBeInTheDocument();
+      expect(screen.getByLabelText("Open in New Tab")).toBeInTheDocument();
+    });
+
+    it("responds to window resize events", () => {
+      // Start with desktop
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: 1024,
+      });
+
+      render(<ResumeWithRouter />);
+
+      // Should show text initially
+      expect(screen.getByText("Download PDF")).toBeInTheDocument();
+
+      // Simulate resize to mobile
+      act(() => {
+        Object.defineProperty(window, "innerWidth", {
+          writable: true,
+          configurable: true,
+          value: 320,
+        });
+        window.dispatchEvent(new Event("resize"));
+      });
+
+      // Should no longer show text
+      expect(screen.queryByText("Download PDF")).not.toBeInTheDocument();
+
+      // But buttons should still be accessible
+      expect(screen.getByLabelText("Download PDF")).toBeInTheDocument();
+    });
+
+    it("cleans up event listener on unmount", () => {
+      const removeEventListenerSpy = vi.spyOn(window, "removeEventListener");
+
+      const { unmount } = render(<ResumeWithRouter />);
+
+      unmount();
+
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        "resize",
+        expect.any(Function),
+      );
     });
   });
 
-  it("renders content in proper list structure", () => {
-    render(<ResumeWithRouter />);
+  describe("accessibility", () => {
+    it("has proper aria-labels for screen readers", () => {
+      render(<ResumeWithRouter />);
 
-    const lists = screen.getAllByRole("list");
-    expect(lists.length).toBeGreaterThan(0);
+      const downloadButton = screen.getByLabelText("Download PDF");
+      const viewButton = screen.getByLabelText("Open in New Tab");
+
+      expect(downloadButton).toHaveAttribute("aria-label", "Download PDF");
+      expect(viewButton).toHaveAttribute("aria-label", "Open in New Tab");
+    });
+
+    it("has proper semantic structure", () => {
+      render(<ResumeWithRouter />);
+
+      // Should have a main heading
+      const heading = screen.getByRole("heading", { level: 1 });
+      expect(heading).toBeInTheDocument();
+
+      // Should have proper link roles
+      const links = screen.getAllByRole("link");
+      expect(links.length).toBeGreaterThan(2); // At least download and view buttons plus nav links
+    });
+  });
+
+  describe("PDF container styling", () => {
+    it("applies correct CSS classes", () => {
+      render(<ResumeWithRouter />);
+
+      const pdfContainer = screen.getByTitle(
+        "Rusty Roberts Resume",
+      ).parentElement;
+      expect(pdfContainer?.className).toMatch(/_pdfContainer_/);
+
+      const iframe = screen.getByTitle("Rusty Roberts Resume");
+      expect(iframe.className).toMatch(/_pdfViewer_/);
+    });
+  });
+
+  describe("button styling and behavior", () => {
+    it("applies correct CSS classes to buttons", () => {
+      render(<ResumeWithRouter />);
+
+      const downloadButton = screen.getByLabelText("Download PDF");
+      const viewButton = screen.getByLabelText("Open in New Tab");
+
+      expect(downloadButton.className).toMatch(/_downloadButton_/);
+      expect(viewButton.className).toMatch(/_viewButton_/);
+    });
+
+    it("has correct download attribute", () => {
+      render(<ResumeWithRouter />);
+
+      const downloadButton = screen.getByLabelText("Download PDF");
+      expect(downloadButton).toHaveAttribute(
+        "download",
+        "rusty-roberts-resume.pdf",
+      );
+    });
+
+    it("opens external link with proper security attributes", () => {
+      render(<ResumeWithRouter />);
+
+      const viewButton = screen.getByLabelText("Open in New Tab");
+      expect(viewButton).toHaveAttribute("target", "_blank");
+      expect(viewButton).toHaveAttribute("rel", "noopener noreferrer");
+    });
   });
 });
