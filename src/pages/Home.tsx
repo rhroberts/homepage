@@ -8,32 +8,41 @@ export default function Home() {
       <NavBar />
       <div id="content">
         <div id="main">
-          <h1>Welcome.</h1>
+          <h1>Hey, there! 👋</h1>
           <p>
-            My name is Rusty Roberts. I'm a software engineer based in Seattle,
-            Washington. I write web and desktop applications. I am an ardent
-            open-source and free software enthusiast, and by extension a fan of
-            the Linux ecosystem.
+            My name is Rusty Roberts. I'm a senior software engineer based in
+            Seattle, Washington, currently seeking new opportunities. Primarily
+            a backend engineer who can work across the full web stack, I'm
+            experienced in designing and building applications in microservice
+            architectures.
           </p>
           <p>
-            Professionally, I develop data-intensive, full-stack web
-            applications for the{" "}
+            Most recently, I worked at{" "}
             <a
-              href="https://www.twdb.texas.gov"
+              href="https://www.leveltenenergy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LevelTen Energy
+            </a>
+            , where I helped lead a significant design and implementation effort
+            to modernize and scale a platform that facilitates renewable energy
+            transactions between large energy buyers and utility-scale wind and
+            solar developers. Previously, I developed data-intensive
+            applications at the{" "}
+            <a
+              href="https://www.twdb.texas.gov/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Texas Water Development Board
-            </a>{" "}
-            and maintain the cloud infrastructure they run on. For backend work,
-            my language of choice is often Python and I have experience in
-            frameworks like Flask and FastAPI. For frontend work, I have
-            experience writing modern React applications in TypeScript. I enjoy
-            learning new languages and technologies, and am always open to using
-            the best tool for the task at hand.
+            </a>
+            , supporting the state's water resource management. I have extensive
+            experience with Python, TypeScript, Node.js, Angular, and various
+            cloud platforms.
           </p>
           <p>
-            Unprofessionally, I enjoy making things that combine music and code,
+            Outside of work, I enjoy making things that combine music and code,
             like{" "}
             <a
               href="https://rhroberts.github.io/browsyn/"
@@ -43,7 +52,7 @@ export default function Home() {
               this
             </a>{" "}
             analog-imitating software synthesizer built on the Web Audio API, or
-            producing music and contributing audio-related code for{" "}
+            producing music and collaborating on{" "}
             <a
               href="https://github.com/dmarc3/bakken"
               target="_blank"
@@ -51,13 +60,13 @@ export default function Home() {
             >
               hobby video games
             </a>
-            .
+            . Away from the keyboard, you'll find me wrenching on and riding
+            bicycles, often with my toddler in tow.
           </p>
           <p>
-            From here, you can read about a few select{" "}
-            <a href="#/projects">projects</a> of mine, view my{" "}
-            <a href="#/resume">resume</a>, our checkout my public repositories
-            on{" "}
+            From here, you can view my <a href="#/resume">resume</a>, read about
+            a few select <a href="#/projects">projects</a> of mine, or check out
+            my public repositories on{" "}
             <a
               href="https://github.com/rhroberts"
               target="_blank"
@@ -67,7 +76,12 @@ export default function Home() {
             </a>
             .
           </p>
-          <p>Thanks for stopping by.</p>
+          <p>
+            Thanks for stopping by.{" "}
+            <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
+              🚴
+            </span>
+          </p>
           <Contact />
         </div>
       </div>

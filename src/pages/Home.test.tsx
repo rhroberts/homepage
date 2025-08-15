@@ -14,7 +14,7 @@ describe("Home", () => {
   it("renders the main page heading", () => {
     render(<HomeWithRouter />);
     expect(
-      screen.getByRole("heading", { name: "Welcome." }),
+      screen.getByRole("heading", { name: "Hey, there! 👋" }),
     ).toBeInTheDocument();
   });
 
