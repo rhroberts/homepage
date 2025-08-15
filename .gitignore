@@ -11,5 +11,8 @@ dist/
 # Claude Code
 .claude/
 
+# IDE
+.vscode/
+
 # Test coverage reporting
 coverage/
