@@ -21,11 +21,11 @@ export default function Projects() {
             imgSrc={wdftImage}
             href="https://waterdatafortexas.org"
           >
-            I work on a small team that develops and maintains Water Data For
-            Texas, a website that provides the public with data and analysis of
-            the state's critical water resources. The site has over 10k weekly
-            active users. Several open-source libraries related to the site are
-            available on our agency's{" "}
+            I worked on a small team that developed and maintained Water Data
+            For Texas, a website that provides the public with data and analysis
+            of the state's critical water resources. At the time, the site had
+            over 10k weekly active users. Several open-source libraries related
+            to the site are available on the agency's{" "}
             <a
               href="https://github.com/twdb"
               target="_blank"
@@ -33,24 +33,22 @@ export default function Projects() {
             >
               GitHub page
             </a>
-            . The majority of the site's backend is written in Python, with
-            React and (a bit of) Angular used for its various frontend
-            applications.
+            . The majority of the site's backend was written in Python and the
+            frontend was built with TypeScript and React.
           </ProjectCard>
           <ProjectCard
             name="Browsyn"
             imgSrc={browsynImage}
             href="https://github.com/rhroberts/browsyn/"
           >
-            Browsyn is my ongoing attempt to emulate an analog synthesizer using
-            the Web Audio API. It currently features two, individually
+            Browsyn is a hobby project to emulate an analog synthesizer using
+            the Web Audio API. It currently features two individually
             addressable oscillators, an amplitude envelope, a low frequency
-            oscillator, and volume and octave controls. It's written in
-            TypeScript with React, and makes pleasant use of the virtues of
-            scalable vector graphics for the knobs and keyboard. While it's a
-            toy a the moment, I have designs to add MIDI input and other
-            essentials to make it a competent instrument for audio production.
-            You can try a demo of the project{" "}
+            oscillator, and volume and octave controls. The interface makes
+            pleasant use of scalable vector graphics for the knobs and keyboard.
+            While it's mostly just a toy at the moment, I hope to add MIDI input
+            and other essentials to make it a competent instrument for audio
+            production. You can try a demo of the project{" "}
             <a
               href="https://rhroberts.github.io/browsyn/"
               target="_blank"
@@ -68,7 +66,7 @@ export default function Projects() {
             yatta is Yet Another Time Tracking Application. It is implemented in
             Python and uses the <i>click</i> command-line interface toolkit as
             well as some fun TUI libraries for data visualization. yatta is part
-            todo application, part timesheet. I wrote it to help myself keep
+            to-do application, part timesheet. I wrote it to help myself keep
             track of and document my work, though I hope it will be useful to
             others as well. I also used the project as a way to try out some of
             the Python tooling described in Claudio Jolowicz's excellent{" "}

@@ -66,15 +66,15 @@ export default function NavBar() {
               <NavItem name="Home" to="/" current={activePage === "Home"} />
               {" • "}
               <NavItem
-                name="Projects"
-                to="/projects"
-                current={activePage === "Projects"}
-              />
-              {" • "}
-              <NavItem
                 name="Resume"
                 to="/resume"
                 current={activePage === "Resume"}
+              />
+              {" • "}
+              <NavItem
+                name="Projects"
+                to="/projects"
+                current={activePage === "Projects"}
               />
             </div>
           </div>
@@ -87,17 +87,17 @@ export default function NavBar() {
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>├─ </span>
                 <NavItem
-                  name="Projects"
-                  to="/projects"
-                  current={activePage === "Projects"}
+                  name="Resume"
+                  to="/resume"
+                  current={activePage === "Resume"}
                 />
               </div>
               <div className={styles.menuItem}>
                 <span className={styles.treeChar}>└─ </span>
                 <NavItem
-                  name="Resume"
-                  to="/resume"
-                  current={activePage === "Resume"}
+                  name="Projects"
+                  to="/projects"
+                  current={activePage === "Projects"}
                 />
               </div>
             </div>
