@@ -25,11 +25,11 @@ export default function Home() {
             >
               LevelTen Energy
             </a>
-            , where I helped lead a significant design and implementation effort
-            to modernize and scale a platform that facilitates renewable energy
-            transactions between large energy buyers and utility-scale wind and
-            solar developers. Previously, I developed data-intensive
-            applications at the{" "}
+            , where I helped lead a platform rearchitecture to modernize and
+            scale a marketplace that facilitates renewable energy transactions
+            between large energy buyers and utility-scale wind and solar
+            developers. Previously, I developed data-intensive applications at
+            the{" "}
             <a
               href="https://www.twdb.texas.gov/"
               target="_blank"
@@ -52,7 +52,7 @@ export default function Home() {
               this
             </a>{" "}
             analog-imitating software synthesizer built on the Web Audio API, or
-            producing music and collaborating on{" "}
+            producing music for and collaborating on{" "}
             <a
               href="https://github.com/dmarc3/bakken"
               target="_blank"
