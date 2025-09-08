@@ -182,10 +182,10 @@ describe("Resume", () => {
       const pdfContainer = screen.getByTitle(
         "Rusty Roberts Resume",
       ).parentElement;
-      expect(pdfContainer?.className).toMatch(/_pdfContainer_/);
+      expect(pdfContainer?.className).toMatch(/_imageContainer_/);
 
       const iframe = screen.getByTitle("Rusty Roberts Resume");
-      expect(iframe.className).toMatch(/_pdfViewer_/);
+      expect(iframe.className).toMatch(/_image_/);
     });
   });
 

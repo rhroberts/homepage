@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
+import LoadingPdf from "../components/LoadingPdf.tsx";
 import DownloadIcon from "../components/icons/DownloadIcon.tsx";
 import ExternalLinkIcon from "../components/icons/ExternalLinkIcon.tsx";
 import styles from "./Resume.module.css";
@@ -63,10 +64,10 @@ export default function Resume() {
               </div>
             </div>
             <div className={styles.pdfContainer}>
-              <iframe
+              <LoadingPdf
                 src="/documents/resume.pdf"
-                className={styles.pdfViewer}
                 title="Rusty Roberts Resume"
+                className={styles.pdfViewer}
               />
             </div>
           </div>
