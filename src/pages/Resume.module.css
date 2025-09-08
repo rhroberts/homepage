@@ -19,7 +19,7 @@
 .viewButton {
   padding: 0.2rem 0.5rem;
   background-color: black;
-  color: #c5e3c5;
+  color: var(--bg-color);
   text-decoration: none;
   border-radius: 3px;
   transition: all 0.2s;
@@ -38,7 +38,7 @@
 
 .downloadButton:hover,
 .viewButton:hover {
-  background-color: #c5e3c5;
+  background-color: var(--bg-color);
   color: black;
   text-decoration: none;
   border: 1px solid black;
