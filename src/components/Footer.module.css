@@ -1,13 +1,29 @@
 .footerWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
-  overflow: auto;
-  width: 100%;
-  margin-top: 12px;
+  background-color: black;
+  color: var(--inactive-color);
+  width: 100vw;
+  z-index: 1000;
 }
 
 .footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
-  border-top: 1px solid black;
+  border-top: 1px solid var(--inactive-color);
+  padding: 12px 0;
+  font-size: smaller;
+}
+
+.favicon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
 }

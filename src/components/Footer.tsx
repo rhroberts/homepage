@@ -12,6 +12,14 @@ export default function Footer() {
         >
           Site source
         </a>
+        {" • "}
+        <a href="#/">
+          <img
+            src="/icon_darkbg.svg"
+            alt="favicon"
+            className={styles.favicon}
+          />
+        </a>
       </footer>
     </div>
   );
