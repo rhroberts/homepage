@@ -1,10 +1,12 @@
 import NavBar from "../components/NavBar.tsx";
 import Contact from "../components/Contact.tsx";
 import Footer from "../components/Footer.tsx";
+import ContactIcons from "../components/ContactIcons.tsx";
 
 export default function Home() {
   return (
     <>
+      <ContactIcons />
       <NavBar />
       <div id="content">
         <div id="main">

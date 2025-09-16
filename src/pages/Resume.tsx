@@ -4,6 +4,7 @@ import Footer from "../components/Footer.tsx";
 import LoadingPdf from "../components/LoadingPdf.tsx";
 import DownloadIcon from "../components/icons/DownloadIcon.tsx";
 import ExternalLinkIcon from "../components/icons/ExternalLinkIcon.tsx";
+import ContactIcons from "../components/ContactIcons.tsx";
 import styles from "./Resume.module.css";
 import { VIEWPORT_BREAKPOINTS } from "../constants/viewport.ts";
 
@@ -23,6 +24,7 @@ export default function Resume() {
 
   return (
     <>
+      <ContactIcons />
       <NavBar />
       <div id="content">
         <div id="main">

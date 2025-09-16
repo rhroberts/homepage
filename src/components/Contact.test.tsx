@@ -44,12 +44,4 @@ describe("Contact", () => {
     expect(document.querySelector("svg.icon-bubble")).toBeInTheDocument();
     expect(document.querySelector("svg.icon-git")).toBeInTheDocument();
   });
-
-  it("includes SVG symbol definitions", () => {
-    render(<Contact />);
-    expect(document.querySelector("defs")).toBeInTheDocument();
-    expect(document.querySelector("symbol#icon-mail")).toBeInTheDocument();
-    expect(document.querySelector("symbol#icon-bubble")).toBeInTheDocument();
-    expect(document.querySelector("symbol#icon-git")).toBeInTheDocument();
-  });
 });

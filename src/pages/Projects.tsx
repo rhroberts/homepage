@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import NavBar from "../components/NavBar.tsx";
 import Footer from "../components/Footer.tsx";
 import LoadingImage from "../components/LoadingImage.tsx";
+import ContactIcons from "../components/ContactIcons.tsx";
 import styles from "./Projects.module.css";
 
 // Import images as assets
@@ -12,6 +13,7 @@ import yattaImage from "../assets/images/yatta.png";
 export default function Projects() {
   return (
     <>
+      <ContactIcons />
       <NavBar />
       <div id="content">
         <div id="main">
