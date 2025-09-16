@@ -30,6 +30,29 @@
   gap: 8px;
 }
 
+.contactIcons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contactIcon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: var(--inactive-color);
+  fill: var(--inactive-color);
+  padding-left: 4px;
+  padding-right: 4px;
+  vertical-align: middle;
+}
+
+.contactIcon:hover {
+  fill: var(--bg-color);
+  stroke: var(--bg-color);
+}
+
 .footerRight {
   display: flex;
   align-items: center;
@@ -56,6 +79,10 @@
   }
 
   .footerText {
+    display: none;
+  }
+
+  .contactIcons {
     display: none;
   }
 }
