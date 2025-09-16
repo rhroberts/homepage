@@ -6,6 +6,7 @@
   width: 100%;
   position: fixed;
   top: 0px;
+  border-bottom: 1px solid var(--inactive-color);
   z-index: 1;
 }
 
