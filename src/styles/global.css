@@ -55,4 +55,6 @@ a {
 #main {
   width: var(--content-width-percent);
   max-width: var(--content-max-width);
+  padding: 0 12px;
+  box-sizing: border-box;
 }
