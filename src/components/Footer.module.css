@@ -30,8 +30,23 @@
   gap: 8px;
 }
 
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .footerText {
   white-space: nowrap;
+}
+
+.footerLink {
+  color: var(--inactive-color);
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: var(--bg-color);
 }
 
 @media (max-width: 480px) {
