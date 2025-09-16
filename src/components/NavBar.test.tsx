@@ -92,7 +92,9 @@ describe("NavBar", () => {
 
   it("toggles mobile menu when button is clicked", () => {
     const { container } = render(<NavBarWithRouter />);
-    const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
+    const menuButton = screen.getByRole("button", {
+      name: "Toggle navigation menu",
+    });
 
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(
@@ -111,7 +113,9 @@ describe("NavBar", () => {
 
   it("closes menu when clicking outside", () => {
     const { container } = render(<NavBarWithRouter />);
-    const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
+    const menuButton = screen.getByRole("button", {
+      name: "Toggle navigation menu",
+    });
 
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(
@@ -134,7 +138,9 @@ describe("NavBar", () => {
     });
 
     const { container } = render(<NavBarWithRouter />);
-    const menuButton = screen.getByRole("button", { name: "[rhroberts.dev]" });
+    const menuButton = screen.getByRole("button", {
+      name: "Toggle navigation menu",
+    });
 
     const menus = container.querySelectorAll('div[class*="menu"]');
     const menu = Array.from(menus).find(

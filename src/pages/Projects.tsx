@@ -53,6 +53,7 @@ export default function Projects() {
               href="https://rhroberts.github.io/browsyn/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Try Browsyn synthesizer demo"
             >
               here
             </a>
@@ -97,7 +98,12 @@ function ProjectCard({ name, imgSrc, href, children }: ProjectCardProps) {
   return (
     <div>
       <h2>{name}</h2>
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Visit ${name} project`}
+      >
         <LoadingImage src={imgSrc} alt={name} width={400} height={250} />
       </a>
       <div className={styles.projectCardContent}>{children}</div>

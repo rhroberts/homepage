@@ -59,6 +59,8 @@ export default function NavBar() {
               className={styles.menuButton}
               type="button"
               onClick={toggleMenu}
+              aria-label="Toggle navigation menu"
+              aria-expanded={menuOpen}
             >
               [rhroberts.dev]
             </button>

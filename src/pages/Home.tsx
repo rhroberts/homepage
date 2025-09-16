@@ -48,6 +48,7 @@ export default function Home() {
               href="https://rhroberts.github.io/browsyn/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Try Browsyn synthesizer demo"
             >
               this
             </a>{" "}

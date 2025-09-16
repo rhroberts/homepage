@@ -15,7 +15,7 @@ export default function Footer() {
             Site source
           </a>
         </div>
-        <a href="#/" aria-label="Go to home page" title="Go to home page">
+        <a href="#/" aria-label="Go to home page">
           <img src="/icon_darkbg.svg" alt="Home" className={styles.favicon} />
         </a>
       </footer>
